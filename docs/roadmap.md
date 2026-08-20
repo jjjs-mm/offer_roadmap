@@ -96,7 +96,7 @@ flowchart LR
 - [ ] `projects/mini-agent/`：可运行的手写 agent，支持至少 3 个工具、流式输出、上下文裁剪
 - [ ] 4 篇技术博客
 - [ ] 简历 v1
-- [ ] LeetCode 60 题
+- [ ] LeetCode 70 题
 
 ### 第 2 月（9/20 – 10/20）：项目一 —— Agent 执行沙箱服务
 
