@@ -148,7 +148,7 @@ flowchart LR
 - [ ] `projects/mini-agent/`：可运行的手写 agent，支持至少 3 个工具、流式输出、上下文裁剪
 - [ ] 4 篇技术博客
 - [ ] 简历 v1
-- [ ] LeetCode 70 题
+- [ ] LeetCode 50 道精选新题 + 约 20 次复刷
 
 ### 第 2 月（9/20 – 10/20）：项目一 —— Agent 执行沙箱服务
 
@@ -192,7 +192,7 @@ flowchart LR
 - [ ] 推理压测报告（至少一条吞吐/延迟曲线）
 - [ ] eval harness 骨架
 - [ ] ≥ 1 个 merged PR
-- [ ] LeetCode 累计 200 题
+- [ ] LeetCode 累计约 130 道新题 + 50 次复刷/模拟
 
 ### 第 4 月（11/20 – 12/20）：入职实习，节奏切换
 
@@ -211,7 +211,7 @@ flowchart LR
 - [ ] 实习顺利入职并度过适应期，明确了自己负责的模块
 - [ ] 简历 v3（加上实习经历那一段）
 - [ ] 八股笔记覆盖 ≥ 80 题
-- [ ] LeetCode 累计 220 题
+- [ ] LeetCode 累计约 150 道新题 + 70 次复刷/模拟
 
 ### 延伸期（2027-01 – 04）：寒假全职产出，2 月底投暑期实习
 
@@ -245,24 +245,24 @@ flowchart LR
 
 ### 第 1 月
 
-- [ ] **W1（8/20–8/26）** 环境搭好（`uv` + Python 3.12 + 一个可用的 LLM API key）；跑通最小 chat completion；手写第一个 tool calling 循环；LeetCode 14 题
-- [ ] **W2（8/27–9/2）** mini-agent 支持多工具与工具错误重试；读 ReAct + Building effective agents 并各写一篇博客；LeetCode 14 题
-- [ ] **W3（9/3–9/9）** 加流式输出与 token 预算裁剪；FastAPI + SSE 包装成服务；`pytest` 补测试；LeetCode 14 题
-- [ ] **W4（9/10–9/16）** 读 MCP 规范并把 mini-agent 的工具改造成 MCP server；读 LangGraph 源码写对比博客；简历 v1；LeetCode 14 题
-- [ ] **W5（9/17–9/23）** mini-agent 收尾并写 README 架构图；**整理南京 + 远程的目标公司 JD 表**；简历 v1 定稿；LeetCode 14 题
+- [ ] **W1（8/20–8/26）** 环境搭好（`uv` + Python 3.12 + 一个可用的 LLM API key）；跑通最小 chat completion；手写第一个 tool calling 循环；LeetCode 数组与哈希 14 题次
+- [ ] **W2（8/27–9/2）** mini-agent 支持多工具与工具错误重试；读 ReAct + Building effective agents 并各写一篇博客；LeetCode 双指针 14 题次
+- [ ] **W3（9/3–9/9）** 加流式输出与 token 预算裁剪；FastAPI + SSE 包装成服务；`pytest` 补测试；LeetCode 滑动窗口与前缀和 14 题次
+- [ ] **W4（9/10–9/16）** 读 MCP 规范并把 mini-agent 的工具改造成 MCP server；读 LangGraph 源码写对比博客；简历 v1；LeetCode 链表 14 题次
+- [ ] **W5（9/17–9/23）** mini-agent 收尾并写 README 架构图；**整理南京 + 远程的目标公司 JD 表**；简历 v1 定稿；LeetCode 栈与队列 14 题次
 
 ### 第 2 月（投递月）
 
-- [ ] **W6（9/24–9/30）** 沙箱项目开工：Docker SDK 起容器执行代码，打通最朴素版本；确定资源配额方案；LeetCode 14 题
+- [ ] **W6（9/24–9/30）** 沙箱项目开工：Docker SDK 起容器执行代码，打通最朴素版本；确定资源配额方案；LeetCode 二分查找 14 题次
 - [ ] **W7（10/1–10/7）** 容器池预热 + 冷启动优化，测出优化前后数字；**日常实习正式开投，本周 ≥ 8 家（南京优先 + 远程）**
-- [ ] **W8（10/8–10/14）** 文件系统快照与会话复用；网络出口白名单；写基础安全测试；投递 ≥ 6 家；LeetCode 14 题
+- [ ] **W8（10/8–10/14）** 文件系统快照与会话复用；网络出口白名单；写基础安全测试；投递 ≥ 6 家；LeetCode 二叉树进阶 14 题次
 - [ ] **W9（10/15–10/21）** 暴露 MCP server 接口并接上 mini-agent；K8s 部署；OTel 埋点；压测出完整报告；简历 v2；**处理面试邀约**
 - [ ] 月度自评能力矩阵，更新到 weekly-review
 
 ### 第 3 月（面试月，面试优先于项目）
 
 - [ ] **W10（10/22–10/28）** vLLM 部署跑通；理解 PagedAttention 与 continuous batching 并写一篇原理博客；投递补量 ≥ 6 家；面试复盘当天回填
-- [ ] **W11（10/29–11/4）** 推理压测：throughput / TTFT / TPOT 曲线；面试进行中；LeetCode 14 题
+- [ ] **W11（10/29–11/4）** 推理压测：throughput / TTFT / TPOT 曲线；面试进行中；LeetCode 堆与区间 14 题次
 - [ ] **W12（11/5–11/11）** 量化实验（AWQ/GPTQ）+ 精度对比；找开源 issue 提第一个 PR；**争取 offer 到手**
 - [ ] **W13（11/12–11/18）** eval harness 骨架：任务集、执行器、指标计算；**确认 offer 与 12 月初入职时间**
 - [ ] **W14（11/19–11/25）** 入职前收尾：沙箱项目文档补齐、简历 v3 加实习那一段的占位；月度自评
@@ -280,7 +280,7 @@ flowchart LR
 
 | 时段 | 内容 | 时长 |
 | --- | --- | --- |
-| 早 | LeetCode 2 题 + 复盘昨天错题 | 1h |
+| 早 | LeetCode 2 题次（新题或复刷，按周模块） | 1h |
 | 中 | 当月主线项目开发 | 3h |
 | 晚 | 读论文/源码 或 八股整理 | 1h |
 | 睡前 | 刷 JD、投递、回消息 | 0.5h |
