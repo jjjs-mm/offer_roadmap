@@ -49,6 +49,41 @@
 
 <!-- 每周在此处追加，最新的放最上面 -->
 
+### W1（08/20 – 08/26）
+
+**本周 roadmap 目标**：环境 + 最小 chat completion + 手写第一个 tool calling 循环；LeetCode 数组与哈希 14 题次。
+
+**实际产出**
+- 项目：`mini-agent` 已跑通。DeepSeek Chat Completions + 异步 `LLMClient`；`calculator` 用 AST 安全求值；Agent Loop 支持 tool calling、工具错误回传、最大 5 步。验收三问都过：`3*(7+2)` → 27；`1/0` 不崩溃并解释未定义；概念题不调工具。
+- LeetCode：6 题（累计 6）。语言：Java。1 两数之和、217 存在重复元素、242 有效的字母异位词、49 字母异位词分组、128 最长连续序列、349 两个数组的交集。
+- 博客 / 笔记：无
+- 开源：无
+
+**投递与面试**
+- 新投递：0 家（按计划 10 月才起量）
+- 新增面试邀约：0
+- 完成面试：0
+
+**卡点**
+- 技术：Agnes 401 后换 DeepSeek；Clash 拦截 TLS；`Message` 不能直接 JSON 序列化；AST 未识别 `Mult`；第二次请求 400（assistant.tool_calls 后未 append tool 消息）。
+- 算法：49 先走了两两比较；128 空 Map / 扫原始数组导致超时；242 第二遍循环写成 `s.length()` 而不是 26。
+- 题次未达到 14：环境与 tool calling 调试占了大部分时间。
+
+**下周调整**
+- 算法切到双指针模块，每天 2 题，优先独立写完再问。
+- 项目只补 `pytest` 覆盖 calculator 与错误回传，不加第二个工具。
+- Clash 对 `api.deepseek.com` 设直连，避免再花时间在代理上。
+
+**本周状态**：起步周 / 精力评分 4/5
+
+### 每日打卡
+
+| 日期 | 项目 | LeetCode | 备注 |
+| --- | --- | --- | --- |
+| 08/21 Day1 | uv + Python 3.12；DeepSeek 跑通；`Message` + `LLMClient` | 1、217 | Agnes 换 DeepSeek；关掉 Clash 后通 |
+| 08/25 Day2 | 第一版 Agent Loop + `calculator` | 242、49 | 哈希模块核心题 |
+| 08/26 Day3 | 工具失败回传；清洗 tool_calls；关掉 thinking；补上 `role: tool` | 128、349 | 三问验收通过。W1 结束 |
+
 ---
 
 ## 投递追踪表
@@ -142,7 +177,7 @@
 | --- | --- | --- | --- |
 | **日常实习 offer** | **1** | **11 月底** | |
 | **实习入职** | 已入职 | **12 月初** | |
-| LeetCode 精选新题 | 约 150 | 12/20 | |
+| LeetCode 精选新题 | 约 150 | 12/20 | 6 |
 | LeetCode 复刷 / 模拟题次 | 约 70 | 12/20 | |
 | 完成项目数 | 3 | 12/20 | |
 | 项目 benchmark 数字齐全 | 3/3 | 12/20 | |

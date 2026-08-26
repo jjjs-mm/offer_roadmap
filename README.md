@@ -60,7 +60,7 @@ scripts/     压测与自动化脚本
 
 关键指标看板见 [docs/weekly-review.md](docs/weekly-review.md#关键指标看板)。
 
-- [ ] 项目 0：mini-agent
+- [ ] 项目 0：mini-agent（进行中：calculator + Agent Loop 已跑通，尚未 3 工具 / 流式 / 裁剪）
 - [ ] 项目 1：agent 执行沙箱服务
 - [ ] 项目 2：推理压测 + eval harness
 - [ ] 1–2 个 merged 开源 PR

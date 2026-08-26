@@ -245,7 +245,7 @@ flowchart LR
 
 ### 第 1 月
 
-- [ ] **W1（8/20–8/26）** 环境搭好（`uv` + Python 3.12 + 一个可用的 LLM API key）；跑通最小 chat completion；手写第一个 tool calling 循环；LeetCode 数组与哈希 14 题次
+- [x] **W1（8/20–8/26）** 环境搭好（`uv` + Python 3.12 + DeepSeek API）；跑通最小 chat completion；手写第一个 tool calling 循环（含错误回传）。LeetCode 哈希 6 题，未满 14 题次，差额挪到 W2
 - [ ] **W2（8/27–9/2）** mini-agent 支持多工具与工具错误重试；读 ReAct + Building effective agents 并各写一篇博客；LeetCode 双指针 14 题次
 - [ ] **W3（9/3–9/9）** 加流式输出与 token 预算裁剪；FastAPI + SSE 包装成服务；`pytest` 补测试；LeetCode 滑动窗口与前缀和 14 题次
 - [ ] **W4（9/10–9/16）** 读 MCP 规范并把 mini-agent 的工具改造成 MCP server；读 LangGraph 源码写对比博客；简历 v1；LeetCode 链表 14 题次
