@@ -246,7 +246,7 @@ flowchart LR
 ### 第 1 月
 
 - [x] **W1（8/20–8/26）** 环境搭好（`uv` + Python 3.12 + DeepSeek API）；跑通最小 chat completion；手写第一个 tool calling 循环（含错误回传）。LeetCode 哈希 6 题，未满 14 题次，差额挪到 W2
-- [ ] **W2（8/27–9/2）** mini-agent 支持多工具与工具错误重试；读 ReAct + Building effective agents 并各写一篇博客；LeetCode 双指针 14 题次
+- [ ] **W2（8/27–9/2）** mini-agent 补 pytest（calculator + 错误回传），不加第二工具；LeetCode 双指针；**每天 1 道 Agent/Java 八股**（见 interview.md W2 表）
 - [ ] **W3（9/3–9/9）** 加流式输出与 token 预算裁剪；FastAPI + SSE 包装成服务；`pytest` 补测试；LeetCode 滑动窗口与前缀和 14 题次
 - [ ] **W4（9/10–9/16）** 读 MCP 规范并把 mini-agent 的工具改造成 MCP server；读 LangGraph 源码写对比博客；简历 v1；LeetCode 链表 14 题次
 - [ ] **W5（9/17–9/23）** mini-agent 收尾并写 README 架构图；**整理南京 + 远程的目标公司 JD 表**；简历 v1 定稿；LeetCode 栈与队列 14 题次
@@ -281,9 +281,9 @@ flowchart LR
 | 时段 | 内容 | 时长 |
 | --- | --- | --- |
 | 早 | LeetCode 2 题次（新题或复刷，按周模块） | 1h |
-| 中 | 当月主线项目开发 | 3h |
-| 晚 | 读论文/源码 或 八股整理 | 1h |
-| 睡前 | 刷 JD、投递、回消息 | 0.5h |
+| 中 | 当月主线项目开发 | 2.5–3h |
+| 晚 | **Agent / 后端八股 1 题**（对照本周项目口述，笔记写到 `notes/topics/`） | 30–45min |
+| 睡前 | 刷 JD、投递、回消息；无投递任务时可停 | 0–0.5h |
 
 周末：一天补项目进度或写博客，一天休息。**不要不休息，四个月是马拉松。**
 
