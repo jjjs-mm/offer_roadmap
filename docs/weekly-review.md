@@ -83,6 +83,7 @@
 | 08/21 Day1 | uv + Python 3.12；DeepSeek 跑通；`Message` + `LLMClient` | 1、217 | Agnes 换 DeepSeek；关掉 Clash 后通 |
 | 08/25 Day2 | 第一版 Agent Loop + `calculator` | 242、49 | 哈希模块核心题 |
 | 08/26 Day3 | 工具失败回传；清洗 tool_calls；关掉 thinking；补上 `role: tool` | 128、349 | 三问验收通过。W1 结束 |
+| 08/27 Day4 | `pytest` 8 passed：calculator 与 `_run_tool` 错误回传 | 167；283（移动零若未交则补） | 双指针开始；晚八股：Agent Loop |
 
 ---
 
