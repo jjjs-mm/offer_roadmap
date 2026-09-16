@@ -64,6 +64,32 @@ uv run mcp dev src/mini_agent/mcp_server.py:mcp
 
 `read_file` 不允许通过 `..` 读取 `data` 目录之外的文件。
 
+## MCP 调用架构
+
+mini-agent 不再直接调用本地工具函数，而是通过 MCP Client 动态发现并调用 MCP Server 中的工具：
+
+```text
+用户问题
+  ↓
+LLM 决定是否调用工具
+  ↓
+MCP Client
+  ↓ stdio
+MCP Server
+  ↓
+calculator / read_file
+```
+
+`mcp_client.py` 负责：
+
+- 通过 `stdio` 启动并连接 MCP Server。
+- 动态获取工具名称、描述和参数 Schema。
+- 将 MCP 工具转换成 LLM 接口需要的格式。
+- 执行工具并把结果返回 Agent Loop。
+
+运行 `uv run python main.py` 时，MCP Client 会自动启动 MCP Server 子进程，不需要提前手动启动服务器。
+
+
 ## 运行测试
 
 ```bash

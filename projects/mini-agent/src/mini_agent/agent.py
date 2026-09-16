@@ -1,56 +1,27 @@
+import asyncio
 import json
-from typing import Any
 from collections.abc import AsyncIterator
+from typing import Any
+
+import httpx
+
 from mini_agent.client import (
     LLMClient,
     is_retryable_error,
 )
-from mini_agent.tools import calculator, read_file
-import httpx
-import asyncio
 from mini_agent.context import (
     build_context_summary,
     collect_removed_messages,
     estimate_messages_tokens,
     trim_messages_sliding_window,
 )
+from mini_agent.mcp_client import (
+    call_mcp_tool,
+    create_mcp_client,
+    load_llm_tools,
+)
 
-TOOLS = [
-    {   #模型看不到 tools.py 里的 Python 源码。它只能看到这份 JSON Schema 所以discription要写清楚
-        "type": "function",
-        "function": {
-            "name": "calculator",
-            "description": "计算数学表达式，例如 3*(7+2)",
-            "parameters": {
-                "type": "object",
-                "properties": {
-                    "expression": {
-                        "type": "string",
-                        "description": "只包含数字和 + - * / 与括号的表达式",
-                    }
-                },
-                "required": ["expression"],
-            },
-        },
-    },
-        {
-        "type": "function",
-        "function": {
-            "name": "read_file",
-            "description": "读取 data 目录内的 UTF-8 文本文件。",
-            "parameters": {
-                "type": "object",
-                "properties": {
-                    "path": {
-                        "type": "string",
-                        "description": "相对于 data 目录的路径，例如 hello.txt",
-                    }
-                },
-                "required": ["path"],
-            },
-        },
-    }
-]
+
 def _merge_stream_delta(
     message: dict[str, Any],
     delta: dict[str, Any],
@@ -90,6 +61,7 @@ def _merge_stream_delta(
         if function_delta.get("arguments"):
             tool_call["function"]["arguments"] += function_delta["arguments"]
 
+
 def _history_assistant(message: dict) -> dict:
     cleaned = {
         "role": "assistant",
@@ -111,21 +83,6 @@ def _history_assistant(message: dict) -> dict:
         ]
     return cleaned
 
-def _run_tool(name: str, arguments: str) -> str:
-    if name not in ("calculator", "read_file"):
-        return f"未知工具: {name}"
-
-    try:
-        payload = json.loads(arguments)
-
-        if name == "calculator":
-            return calculator(payload["expression"])
-
-        return read_file(payload["path"])
-
-    except Exception as error:
-        return f"工具执行失败: {error}"
-
 
 async def stream_agent(
     question: str,
@@ -140,6 +97,20 @@ async def stream_agent(
         yield {
             "type": "error",
             "message": str(error),
+        }
+        return
+    try:
+        async with create_mcp_client() as mcp_client:
+            llm_tools = await load_llm_tools(
+                mcp_client
+            )
+    except Exception as error:
+        yield {
+            "type": "error",
+            "message": (
+                "MCP 工具发现失败："
+                f"{type(error).__name__}: {error}"
+            ),
         }
         return
 
@@ -294,7 +265,7 @@ async def stream_agent(
             try:
                 async for delta in client.stream_chat(
                     messages,
-                    tools=TOOLS,
+                    tools=llm_tools,
                 ):
                     received_delta = True
 
@@ -369,9 +340,20 @@ async def stream_agent(
                     "arguments": arguments,
                 }
 
-                result = _run_tool(name, arguments)
-                tool_result_cache[cache_key] = result
+                try:
+                    async with create_mcp_client() as mcp_client:
+                        result = await call_mcp_tool(
+                            mcp_client,
+                            name,
+                            arguments,
+                        )
+                except Exception as error:
+                    result = (
+                        "MCP 工具调用失败："
+                        f"{type(error).__name__}: {error}"
+                    )
 
+                tool_result_cache[cache_key] = result
                 yield {
                     "type": "tool_end",
                     "tool_call_id": call["id"],

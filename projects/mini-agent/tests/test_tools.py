@@ -1,5 +1,5 @@
 import pytest
-from mini_agent.agent import _merge_stream_delta, _run_tool
+from mini_agent.agent import _merge_stream_delta
 from mini_agent.tools import calculator
 from mini_agent import tools
 
@@ -24,26 +24,6 @@ def test_calculator_rejects_code():
         calculator("__import__('os').system('echo hacked')")
 
 
-def test_run_tool_success():
-    result = _run_tool("calculator", '{"expression": "3*(7+2)"}')
-    assert result == "27.0"
-
-
-def test_run_tool_unknown_name():
-    result = _run_tool("search", '{"expression": "1+1"}')
-    assert result.startswith("未知工具")
-
-
-def test_run_tool_divide_by_zero_returns_string():
-    result = _run_tool("calculator", '{"expression": "1/0"}')
-    assert result.startswith("工具执行失败")
-    assert "0" in result
-
-
-def test_run_tool_bad_json_returns_string():
-    result = _run_tool("calculator", "not-json")
-    assert result.startswith("工具执行失败")
-
 def test_read_file_success(tmp_path, monkeypatch):
     monkeypatch.setattr(tools, "READ_ROOT", tmp_path)
 
@@ -62,13 +42,6 @@ def test_read_file_rejects_path_escape(tmp_path, monkeypatch):
 
     with pytest.raises(ValueError, match="不允许"):
         tools.read_file("../outside.txt")
-
-def test_run_tool_missing_file_returns_error(tmp_path, monkeypatch):
-    monkeypatch.setattr(tools, "READ_ROOT", tmp_path)
-
-    result = _run_tool("read_file", '{"path": "missing.txt"}')
-
-    assert result.startswith("工具执行失败:")
 
 def test_merge_stream_tool_call_deltas():
     message = {

@@ -297,7 +297,11 @@ async def test_stream_agent_reuses_cached_tool_result(
     client = RepeatingToolClient()
     tool_runs = 0
 
-    def fake_run_tool(name, arguments):
+    async def fake_call_mcp_tool(
+        mcp_client,
+        name,
+        arguments,
+    ):
         nonlocal tool_runs
         tool_runs += 1
         return "27.0"
@@ -307,8 +311,8 @@ async def test_stream_agent_reuses_cached_tool_result(
         lambda: client,
     )
     monkeypatch.setattr(
-        "mini_agent.agent._run_tool",
-        fake_run_tool,
+        "mini_agent.agent.call_mcp_tool",
+        fake_call_mcp_tool,
     )
 
     events = [
