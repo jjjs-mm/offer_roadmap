@@ -384,3 +384,67 @@ async def test_stream_agent_includes_history(
             "content": "我叫什么？",
         },
     ]
+
+
+@pytest.mark.asyncio
+async def test_stream_agent_opens_one_mcp_session_per_request(
+    monkeypatch,
+):
+    session_enters = 0
+    session_exits = 0
+
+    class FakeMCPClient:
+        pass
+
+    class FakeMCPContext:
+        async def __aenter__(self):
+            nonlocal session_enters
+            session_enters += 1
+            return FakeMCPClient()
+
+        async def __aexit__(
+            self,
+            exc_type,
+            exc_value,
+            traceback,
+        ):
+            nonlocal session_exits
+            session_exits += 1
+
+    class FakeLLMClient:
+        async def stream_chat(
+            self,
+            messages,
+            tools=None,
+        ):
+            yield {"content": "完成"}
+
+    monkeypatch.setattr(
+        "mini_agent.agent.LLMClient.from_env",
+        lambda: FakeLLMClient(),
+    )
+    monkeypatch.setattr(
+        "mini_agent.agent.create_mcp_client",
+        lambda: FakeMCPContext(),
+    )
+    async def fake_load_llm_tools(client):
+        return []
+
+    monkeypatch.setattr(
+        "mini_agent.agent.load_llm_tools",
+        fake_load_llm_tools,
+    )
+
+    events = [
+        event
+        async for event in stream_agent("你好")
+    ]
+
+    assert events == [
+        {
+            "type": "content",
+            "content": "完成",
+        }
+    ]
+    assert session_enters == 1
+    assert session_exits == 1

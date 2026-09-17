@@ -4,7 +4,7 @@ from collections.abc import AsyncIterator
 from typing import Any
 
 import httpx
-
+from mcp import Client
 from mini_agent.client import (
     LLMClient,
     is_retryable_error,
@@ -84,41 +84,22 @@ def _history_assistant(message: dict) -> dict:
     return cleaned
 
 
-async def stream_agent(
+async def _stream_agent_with_mcp(
     question: str,
+    llm_client: LLMClient,
+    mcp_client: Client,
+    llm_tools: list[dict[str, Any]],
     history: list[dict[str, Any]] | None = None,
     max_context_tokens: int = 4_000,
     max_request_attempts: int = 3,
     retry_delay_seconds: float = 0.5,
 ) -> AsyncIterator[dict[str, Any]]:
-    try:
-        client = LLMClient.from_env()
-    except RuntimeError as error:
-        yield {
-            "type": "error",
-            "message": str(error),
-        }
-        return
-    try:
-        async with create_mcp_client() as mcp_client:
-            llm_tools = await load_llm_tools(
-                mcp_client
-            )
-    except Exception as error:
-        yield {
-            "type": "error",
-            "message": (
-                "MCP 工具发现失败："
-                f"{type(error).__name__}: {error}"
-            ),
-        }
-        return
-
     messages: list[dict[str, Any]] = [
         {
             "role": "system",
             "content": (
                 "需要计算时调用 calculator。"
+                "不知道 data 目录有哪些文件时，先调用 list_files。"
                 "需要读取 data 目录内的文本文件时调用 read_file，"
                 "path 使用相对于 data 目录的路径，例如 hello.txt。"
                 "根据工具实际返回的内容回答，不要猜测文件内容。"
@@ -263,7 +244,7 @@ async def stream_agent(
             max_request_attempts + 1,
         ):
             try:
-                async for delta in client.stream_chat(
+                async for delta in llm_client.stream_chat(
                     messages,
                     tools=llm_tools,
                 ):
@@ -341,12 +322,11 @@ async def stream_agent(
                 }
 
                 try:
-                    async with create_mcp_client() as mcp_client:
-                        result = await call_mcp_tool(
-                            mcp_client,
-                            name,
-                            arguments,
-                        )
+                    result = await call_mcp_tool(
+                    mcp_client,
+                    name,
+                    arguments,
+               )
                 except Exception as error:
                     result = (
                         "MCP 工具调用失败："
@@ -372,3 +352,46 @@ async def stream_agent(
         "type": "error",
         "message": "超出最大步数",
     }
+
+
+async def stream_agent(
+    question: str,
+    history: list[dict[str, Any]] | None = None,
+    max_context_tokens: int = 4_000,
+    max_request_attempts: int = 3,
+    retry_delay_seconds: float = 0.5,
+) -> AsyncIterator[dict[str, Any]]:
+    try:
+        llm_client = LLMClient.from_env()
+    except RuntimeError as error:
+        yield {
+            "type": "error",
+            "message": str(error),
+        }
+        return
+
+    try:
+        async with create_mcp_client() as mcp_client:
+            llm_tools = await load_llm_tools(
+                mcp_client
+            )
+
+            async for event in _stream_agent_with_mcp(
+                question,
+                llm_client,
+                mcp_client,
+                llm_tools,
+                history,
+                max_context_tokens,
+                max_request_attempts,
+                retry_delay_seconds,
+            ):
+                yield event
+    except Exception as error:
+        yield {
+            "type": "error",
+            "message": (
+                "MCP 会话失败："
+                f"{type(error).__name__}: {error}"
+            ),
+        }

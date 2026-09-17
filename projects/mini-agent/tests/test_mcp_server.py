@@ -12,7 +12,7 @@ async def test_mcp_lists_registered_tools():
 
     tool_names = {tool.name for tool in result.tools}
 
-    assert tool_names == {"calculator", "read_file"}
+    assert tool_names == {"calculator", "read_file", "list_files"}
 
 
 @pytest.mark.asyncio

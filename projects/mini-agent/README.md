@@ -57,9 +57,10 @@ http://127.0.0.1:8000/health
 uv run mcp dev src/mini_agent/mcp_server.py:mcp
 ```
 
-当前 MCP Server 提供两个工具：
+当前 MCP Server 提供三个工具：
 
 - `calculator`：计算数学表达式。
+- `list_files`：列出 `data` 目录内可读取的文件路径。
 - `read_file`：安全读取 `data` 目录中的文件。
 
 `read_file` 不允许通过 `..` 读取 `data` 目录之外的文件。
@@ -77,7 +78,7 @@ MCP Client
   ↓ stdio
 MCP Server
   ↓
-calculator / read_file
+calculator / list_files / read_file
 ```
 
 `mcp_client.py` 负责：

@@ -54,3 +54,15 @@ def read_file(path: str) -> str:
         raise ValueError("不允许读取 data 目录之外的文件")
 
     return target.read_text(encoding="utf-8")
+
+
+def list_files() -> str:
+    root = READ_ROOT.resolve()
+
+    paths = sorted(
+        path.relative_to(root).as_posix()
+        for path in root.rglob("*")
+        if path.is_file()
+    )
+
+    return "\n".join(paths)

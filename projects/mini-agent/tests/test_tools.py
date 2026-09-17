@@ -43,6 +43,29 @@ def test_read_file_rejects_path_escape(tmp_path, monkeypatch):
     with pytest.raises(ValueError, match="不允许"):
         tools.read_file("../outside.txt")
 
+def test_list_files_returns_sorted_relative_paths(
+    tmp_path,
+    monkeypatch,
+):
+    data_dir = tmp_path / "data"
+    data_dir.mkdir()
+
+    (data_dir / "z.txt").write_text(
+        "最后一个",
+        encoding="utf-8",
+    )
+
+    notes_dir = data_dir / "notes"
+    notes_dir.mkdir()
+    (notes_dir / "a.txt").write_text(
+        "嵌套文件",
+        encoding="utf-8",
+    )
+
+    monkeypatch.setattr(tools, "READ_ROOT", data_dir)
+
+    assert tools.list_files() == "notes/a.txt\nz.txt"
+
 def test_merge_stream_tool_call_deltas():
     message = {
         "role": "assistant",

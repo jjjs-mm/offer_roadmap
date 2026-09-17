@@ -20,6 +20,7 @@ async def test_load_llm_tools_from_mcp_server():
     assert tool_names == {
         "calculator",
         "read_file",
+        "list_files",
     }
 
 
