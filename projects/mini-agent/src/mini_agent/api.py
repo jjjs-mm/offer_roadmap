@@ -1,6 +1,8 @@
+from pathlib import Path
 from collections.abc import AsyncIterable
 
 from fastapi import FastAPI
+from fastapi.responses import FileResponse
 from fastapi.sse import EventSourceResponse, ServerSentEvent
 from pydantic import BaseModel
 
@@ -8,6 +10,13 @@ from mini_agent.agent import stream_agent
 
 
 app = FastAPI(title="mini-agent")
+STATIC_DIR = Path(__file__).parent / "static"
+
+
+@app.get("/", response_class=FileResponse)
+async def chat_page() -> FileResponse:
+    return FileResponse(STATIC_DIR / "index.html")
+
 conversation_histories: dict[
     str,
     list[dict[str, str]],

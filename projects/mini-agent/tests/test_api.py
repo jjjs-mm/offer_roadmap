@@ -155,3 +155,10 @@ def test_chat_stream_remembers_conversation(
             "content": "记住了",
         },
     ]
+
+def test_root_returns_chat_page():
+    client = TestClient(api.app)
+    response = client.get("/")
+
+    assert response.status_code == 200
+    assert "mini-agent" in response.text

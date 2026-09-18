@@ -49,6 +49,13 @@ uv run uvicorn mini_agent.api:app --reload
 http://127.0.0.1:8000/health
 ```
 
+## 使用网页聊天界面
+
+启动 HTTP API 后，在浏览器打开：
+
+```text
+http://127.0.0.1:8000/
+
 ## 运行 MCP Server
 
 使用 MCP Inspector 启动和调试：
