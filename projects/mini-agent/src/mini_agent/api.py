@@ -1,7 +1,7 @@
 from pathlib import Path
 from collections.abc import AsyncIterable
 
-from fastapi import FastAPI
+from fastapi import FastAPI, Response, status
 from fastapi.responses import FileResponse
 from fastapi.sse import EventSourceResponse, ServerSentEvent
 from pydantic import BaseModel
@@ -32,7 +32,18 @@ class ChatRequest(BaseModel):
 async def health() -> dict[str, str]:
     return {"status": "ok"}
 
+@app.delete(
+    "/conversations/{conversation_id}",
+    status_code=status.HTTP_204_NO_CONTENT,
+)
+async def clear_conversation(
+    conversation_id: str,
+) -> Response:
+    conversation_histories.pop(conversation_id, None)
 
+    return Response(
+        status_code=status.HTTP_204_NO_CONTENT,
+    )
 
 @app.post("/chat/stream", response_class=EventSourceResponse)
 async def chat_stream(

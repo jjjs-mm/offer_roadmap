@@ -55,6 +55,7 @@ http://127.0.0.1:8000/health
 
 ```text
 http://127.0.0.1:8000/
+点击“新对话”会调用 `DELETE /conversations/{conversation_id}` 清除服务端的内存历史，再生成新的 `conversation_id`。流式回答尚未结束时，该按钮会被禁用，避免旧请求写入新会话。
 
 ## 运行 MCP Server
 

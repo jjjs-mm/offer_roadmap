@@ -162,3 +162,20 @@ def test_root_returns_chat_page():
 
     assert response.status_code == 200
     assert "mini-agent" in response.text
+
+def test_delete_conversation_clears_history():
+    conversation_id = "clear-test"
+    api.conversation_histories[conversation_id] = [
+        {
+            "role": "user",
+            "content": "我叫小明",
+        }
+    ]
+
+    client = TestClient(api.app)
+    response = client.delete(
+        f"/conversations/{conversation_id}",
+    )
+
+    assert response.status_code == 204
+    assert conversation_id not in api.conversation_histories
