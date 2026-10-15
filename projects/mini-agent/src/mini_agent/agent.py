@@ -102,6 +102,8 @@ async def _stream_agent_with_mcp(
                 "不知道 data 目录有哪些文件时，先调用 list_files。"
                 "需要读取 data 目录内的文本文件时调用 read_file，"
                 "path 使用相对于 data 目录的路径，例如 hello.txt。"
+                "只有用户明确要求运行 Python 代码时才调用 run_python。"
+                "run_python 的结果来自受限本机沙箱，按实际执行结果回答。"
                 "根据工具实际返回的内容回答，不要猜测文件内容。"
                 "工具失败时如实说明。其他问题直接回答。"
             ),

@@ -1,14 +1,25 @@
 import json
 import sys
 from typing import Any
-
+import os
 from mcp import Client, StdioServerParameters
 
 
 def create_mcp_client() -> Client:
+    server_environment: dict[str, str] = {}
+
+    portfolio_database_path = os.getenv(
+        "PORTFOLIO_DATABASE_PATH"
+    )
+    if portfolio_database_path is not None:
+        server_environment["PORTFOLIO_DATABASE_PATH"] = (
+            portfolio_database_path
+        )
+
     server = StdioServerParameters(
         command=sys.executable,
         args=["-m", "mini_agent.mcp_server"],
+        env=server_environment or None,
     )
 
     return Client(server)

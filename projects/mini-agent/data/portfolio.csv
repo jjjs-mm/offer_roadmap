@@ -1,0 +1,4 @@
+name,asset_type,quantity,price
+沪深300ETF,equity_fund,100,4.20
+中短债基金,bond_fund,500,1.25
+货币基金,cash,1000,1.00

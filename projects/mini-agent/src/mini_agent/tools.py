@@ -1,10 +1,28 @@
 """模型负责决定算什么，这段代码负责只算数学、不跑别的代码"""
 
 import ast
+import json
 import operator
 from pathlib import Path
+
+from code_sandbox.models import ExecutionRequest, InputFile
+from code_sandbox.runner import DockerRunner
+from mini_agent.portfolio import analyze_portfolio_csv
+from mini_agent.portfolio_repository import (
+    DEFAULT_PORTFOLIO_DATABASE_PATH,
+    PortfolioRepository,
+)
+from mini_agent.portfolio_risk import (
+    PortfolioRiskAssessment,
+    assess_portfolio_risk as build_portfolio_risk_report,
+)
+
 # 读文件工具只允许访问这个目录
 READ_ROOT = Path(__file__).resolve().parents[2] / "data"
+TOOL_OUTPUT_CHARS = 2000
+portfolio_repository = PortfolioRepository(
+    DEFAULT_PORTFOLIO_DATABASE_PATH
+)
 
 _OPS = {
     ast.Add: operator.add,
@@ -66,3 +84,89 @@ def list_files() -> str:
     )
 
     return "\n".join(paths)
+
+def analyze_portfolio(csv_content: str) -> str:
+    """
+    分析持仓 CSV，返回结构化 JSON。
+
+    CSV 必须包含：
+    name、asset_type、quantity、price。
+    """
+    analysis = analyze_portfolio_csv(csv_content)
+    return analysis.model_dump_json()
+
+def get_portfolio(portfolio_id: str) -> str:
+    """
+    根据 portfolio_id 查询已经保存的持仓分析。
+    """
+    record = portfolio_repository.get(portfolio_id)
+
+    if record is None:
+        raise ValueError("未找到持仓分析记录")
+
+    return record.model_dump_json()
+
+def assess_portfolio_risk(
+    portfolio_id: str,
+) -> str:
+    """
+    根据已保存的持仓分析生成确定性风险报告。
+    """
+    record = portfolio_repository.get(portfolio_id)
+
+    if record is None:
+        raise ValueError("未找到持仓分析记录")
+
+    assessment = PortfolioRiskAssessment(
+        portfolio_id=portfolio_id,
+        report=build_portfolio_risk_report(
+            record.analysis
+        ),
+    )
+
+    return assessment.model_dump_json()
+
+def run_python(
+    code: str,
+    input_files: list[dict[str, str]] | None = None,
+) -> str:
+    """在本机受限 Docker 容器中执行 Python，并返回精简结果。"""
+    files = [
+        InputFile.model_validate(input_file)
+        for input_file in (input_files or [])
+    ]
+
+    request = ExecutionRequest(
+        code=code,
+        input_files=files,
+    )
+
+    runner = DockerRunner()
+    try:
+        result = runner.run(request)
+    finally:
+        runner.client.close()
+
+    return json.dumps(
+        {
+            "execution_id": result.execution_id,
+            "status": result.status.value,
+            "exit_code": result.exit_code,
+            "stdout": result.stdout[:TOOL_OUTPUT_CHARS],
+            "stderr": result.stderr[:TOOL_OUTPUT_CHARS],
+            "tool_preview_truncated": (
+                len(result.stdout) > TOOL_OUTPUT_CHARS
+                or len(result.stderr) > TOOL_OUTPUT_CHARS
+            ),
+            "duration_ms": result.duration_ms,
+            "artifacts": [
+                {
+                    "path": artifact.path,
+                    "size_bytes": artifact.size_bytes,
+                }
+                for artifact in result.artifacts
+            ],
+            "artifacts_skipped": result.artifacts_skipped,
+        },
+        ensure_ascii=False,
+    )
