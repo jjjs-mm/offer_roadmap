@@ -1,0 +1,33 @@
+{
+  "dataset": "public-fund-pdf-retrieval-test",
+  "version": 1,
+  "split": "test",
+  "document_count": 10,
+  "case_count": 30,
+  "limit": 3,
+  "evaluation_time_ms": 247.462,
+  "methods": {
+    "catalog_ngram": {
+      "total_cases": 30,
+      "answerable_cases": 20,
+      "unanswerable_cases": 10,
+      "source_hit_at_1": 1.0,
+      "source_hit_at_k": 1.0,
+      "source_mrr": 1.0,
+      "page_hit_at_k": 0.5,
+      "rejection_rate": 0.1
+    },
+    "selected_document_ngram": {
+      "total_cases": 30,
+      "answerable_cases": 20,
+      "unanswerable_cases": 10,
+      "page_hit_at_1": 0.65,
+      "page_hit_at_k": 0.8,
+      "rejection_rate": 0.1,
+      "evidence_gate_accuracy": 0.5666666666666667,
+      "answerable_pass_rate": 0.35,
+      "unanswerable_rejection_rate": 1.0,
+      "false_answer_rate": 0.0
+    }
+  }
+}

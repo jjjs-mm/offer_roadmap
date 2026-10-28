@@ -1,0 +1,246 @@
+{
+  "schema_version": 1,
+  "retrieved_at": "2026-10-27",
+  "documents": [
+    {
+      "filename": "chinaamc_hs300_etf_link_a_2026-05-29.pdf",
+      "fund_name": "华夏沪深300ETF联接A",
+      "fund_manager": "华夏基金",
+      "fund_code": "000051",
+      "asset_type": "equity_index_fund",
+      "published_at": "2026-05-29",
+      "source_url": "https://www.chinaamc.com/upload/resources/file/2026/05/29/3a929be438664216bb270e72671b1bf8.pdf",
+      "sha256": "d993c984467f0b20160248e342ad4a5a7e50a7a91c4fd310b85a06d69b629f8b"
+    },
+    {
+      "filename": "pingan_short_bond_2026-07-27.pdf",
+      "fund_name": "平安中短债债券",
+      "fund_manager": "平安基金",
+      "fund_code": "004827",
+      "asset_type": "short_duration_bond_fund",
+      "published_at": "2026-07-27",
+      "source_url": "https://fund.pingan.com/nasfile/1785114805881.pdf",
+      "sha256": "be6d66c006832d87e0c93a433a1b7e97824d2e87fc388e704e889ae70431ed43"
+    },
+    {
+      "filename": "efunds_money_market_a_2026-08-11.pdf",
+      "fund_name": "易方达天天增利货币A",
+      "fund_manager": "易方达基金",
+      "fund_code": "000704",
+      "asset_type": "money_market_fund",
+      "published_at": "2026-08-11",
+      "source_url": "https://cdn.efunds.com.cn/owch/data/bulletin/20260811/%E6%98%93%E6%96%B9%E8%BE%BE%E5%A4%A9%E5%A4%A9%E5%A2%9E%E5%88%A9%E8%B4%A7%E5%B8%81%E5%B8%82%E5%9C%BA%E5%9F%BA%E9%87%91%EF%BC%88%E6%98%93%E6%96%B9%E8%BE%BE%E5%A4%A9%E5%A4%A9%E5%A2%9E%E5%88%A9%E8%B4%A7%E5%B8%81A%EF%BC%89%E5%9F%BA%E9%87%91%E4%BA%A7%E5%93%81%E8%B5%84%E6%96%99%E6%A6%82%E8%A6%81%E6%9B%B4%E6%96%B0.pdf",
+      "sha256": "9a30985893d0a2fe22bf41409cbdd5cb19c4f92c9d5d259e7dd22fba6fce4048"
+    },
+    {
+      "filename": "bosera_quant_balanced_mixed_2021-08-25.pdf",
+      "fund_name": "博时量化平衡混合",
+      "fund_manager": "博时基金",
+      "fund_code": "004495",
+      "asset_type": "balanced_mixed_fund",
+      "published_at": "2021-08-25",
+      "source_url": "https://www.bosera.com/common/downloadFile.do?attachmentId=1270262",
+      "sha256": "a7af5511cbbf9cc4d978bdbc96bad8dfc889e3817bb28660b77cd60a91284f24"
+    },
+    {
+      "filename": "bosera_fuxin_pure_bond_2020-08-27.pdf",
+      "fund_name": "博时富信纯债债券",
+      "fund_manager": "博时基金",
+      "fund_code": "008411",
+      "asset_type": "pure_bond_fund",
+      "published_at": "2020-08-27",
+      "source_url": "https://www.bosera.com/common/downloadFile.do?fileId=53B4128E2A6A08DB0F6C3B5F5E66F6D8",
+      "sha256": "f73a55ab892072f810e2cda9d521356dfc1efdcebfd1fa656bf17d25e740577e"
+    },
+    {
+      "filename": "fullgoal_sse_composite_etf_2026-01-19.pdf",
+      "fund_name": "富国上证综指ETF",
+      "fund_manager": "富国基金",
+      "fund_code": "510210",
+      "asset_type": "equity_index_etf",
+      "published_at": "2026-01-19",
+      "source_url": "https://www.fullgoal.com.cn/wbs-file/fund_report/20260119/CN_50100000_510210_FA010080_20260002.pdf",
+      "sha256": "c720d29d0a0ffc2427a2cacf74d63a7287447764f0103bcd9ac99302dd860053"
+    },
+    {
+      "filename": "fullgoal_quality_enterprise_mixed_a_2026-03-09.pdf",
+      "fund_name": "富国优质企业混合A",
+      "fund_manager": "富国基金",
+      "fund_code": "011046",
+      "asset_type": "equity_oriented_mixed_fund",
+      "published_at": "2026-03-09",
+      "source_url": "https://www.fullgoal.com.cn/wbs-file/fund_report/20260309/CN_50100000_011046_FA010080_20260008_011046_20260309_090000_01.pdf",
+      "sha256": "a4005b0cb154810d067f8913ca8cd1e815a9038ab1fc3f6cba02280e42738ebe"
+    },
+    {
+      "filename": "efunds_hang_seng_tech_etf_qdii_2026-02-12.pdf",
+      "fund_name": "易方达恒生科技ETF（QDII）",
+      "fund_manager": "易方达基金",
+      "fund_code": "513010",
+      "asset_type": "qdii_equity_index_etf",
+      "published_at": "2026-02-12",
+      "source_url": "https://cdn.efunds.com.cn/owch/data/bulletin/20260212/%E6%98%93%E6%96%B9%E8%BE%BE%E6%81%92%E7%94%9F%E7%A7%91%E6%8A%80%E4%BA%A4%E6%98%93%E5%9E%8B%E5%BC%80%E6%94%BE%E5%BC%8F%E6%8C%87%E6%95%B0%E8%AF%81%E5%88%B8%E6%8A%95%E8%B5%84%E5%9F%BA%E9%87%91%EF%BC%88QDII%EF%BC%89%E5%9F%BA%E9%87%91%E4%BA%A7%E5%93%81%E8%B5%84%E6%96%99%E6%A6%82%E8%A6%81%E6%9B%B4%E6%96%B0.pdf?from=person",
+      "sha256": "a9470e306a7306291146d197663a087acdb3a040dd53a61fce5f40f7ade51606"
+    },
+    {
+      "filename": "bosera_nasdaq100_etf_link_qdii_a_2026-06-26.pdf",
+      "fund_name": "博时纳斯达克100ETF发起式联接（QDII）A人民币",
+      "fund_manager": "博时基金",
+      "fund_code": "016055",
+      "asset_type": "qdii_equity_index_feeder_fund",
+      "published_at": "2026-06-26",
+      "source_url": "https://www.bosera.com/common/downloadFile.do?fileId=E7273629A1EA06FF96C7CE05E2646232",
+      "sha256": "cb90df9e4f6851d16f56ee315f31a40ebadfe2fb622fca92aca1716ac1533314"
+    },
+    {
+      "filename": "efunds_global_allocation_qdii_a_2026-02-12.pdf",
+      "fund_name": "易方达全球配置混合（QDII）A人民币",
+      "fund_manager": "易方达基金",
+      "fund_code": "019155",
+      "asset_type": "qdii_global_allocation_mixed_fund",
+      "published_at": "2026-02-12",
+      "source_url": "https://cdn.efunds.com.cn/owch/data/bulletin/20260212/%E6%98%93%E6%96%B9%E8%BE%BE%E5%85%A8%E7%90%83%E9%85%8D%E7%BD%AE%E6%B7%B7%E5%90%88%E5%9E%8B%E8%AF%81%E5%88%B8%E6%8A%95%E8%B5%84%E5%9F%BA%E9%87%91%EF%BC%88QDII%EF%BC%89%EF%BC%88%E6%98%93%E6%96%B9%E8%BE%BE%E5%85%A8%E7%90%83%E9%85%8D%E7%BD%AE%E6%B7%B7%E5%90%88%EF%BC%88QDII%EF%BC%89A%EF%BC%88%E4%BA%BA%E6%B0%91%E5%B8%81%E4%BB%BD%E9%A2%9D%EF%BC%89%EF%BC%89%E5%9F%BA%E9%87%91%E4%BA%A7%E5%93%81%E8%B5%84%E6%96%99%E6%A6%82%E8%A6%81%E6%9B%B4%E6%96%B0.pdf",
+      "sha256": "7a07ef3517cdfadd68e610a1cefde71d85ef5eca9d56d08b6b6b921ce6458f26"
+    },
+    {
+      "filename": "jiashi_crude_qdii_lof_2020-08-28.pdf",
+      "fund_name": "嘉实原油证券基金（QDII-LOF）",
+      "fund_manager": "嘉实基金",
+      "fund_code": "160723",
+      "asset_type": "qdii_commodity_fof",
+      "published_at": "2020-08-28",
+      "source_url": "https://www.jsfund.cn/cms/Services/AttachDownLoad.jsp?id=478146",
+      "sha256": "c8c6b0ea010e740ec84bd9ebcfe334335a3f19d53ca2128f37cedd80e7caf047"
+    },
+    {
+      "filename": "fullgoal_money_c_2025-05-12.pdf",
+      "fund_name": "富国天时货币C",
+      "fund_manager": "富国基金",
+      "fund_code": "000862",
+      "asset_type": "money_market_fund",
+      "published_at": "2025-05-12",
+      "source_url": "https://www.fullgoal.com.cn/wbs-file/fund_report/20250512/CN_50100000_100025_FA010080_20250013_000862_20250512_090000_01.pdf",
+      "sha256": "9185c1b0412dc748b8f118a379296a57daf8df32f4a6aa764f48c5043d551927"
+    },
+    {
+      "filename": "fullgoal_dividend_mixed_2026-07-27.pdf",
+      "fund_name": "富国天成红利灵活配置混合",
+      "fund_manager": "富国基金",
+      "fund_code": "100029",
+      "asset_type": "dividend_mixed_fund",
+      "published_at": "2026-07-27",
+      "source_url": "https://www.fullgoal.com.cn/wbs-file/fund_report/20260727/CN_50100000_100029_FA010080_20260009.pdf",
+      "sha256": "16c8c07cbf193887e01247c370a3e5fe32080bc99c1b4d97b9127c1c5a90fd38"
+    },
+    {
+      "filename": "fullgoal_csi500_enhanced_2025-12-15.pdf",
+      "fund_name": "富国中证500指数增强（LOF）Y",
+      "fund_manager": "富国基金",
+      "fund_code": "022953",
+      "asset_type": "enhanced_equity_index_fund",
+      "published_at": "2025-12-15",
+      "source_url": "https://www.fullgoal.com.cn/wbs-file/fund_report/20251215/CN_50100000_161017_FA010080_20250031_022953_20251215_090000_01.pdf",
+      "sha256": "14238d21cad230e87ab60d10cb826dac7f40ab778ecbb6d0613c546c847f3f71"
+    },
+    {
+      "filename": "fullgoal_bluechip_qdii_2025-11-18.pdf",
+      "fund_name": "富国蓝筹精选股票（QDII）美元现汇",
+      "fund_manager": "富国基金",
+      "fund_code": "010583",
+      "asset_type": "qdii_equity_fund",
+      "published_at": "2025-11-18",
+      "source_url": "https://www.fullgoal.com.cn/wbs-file/fund_report/20251118/CN_50100000_007455_FA010080_20250026_010583_20251118_090000_01.pdf",
+      "sha256": "f3ad7d963205d3961cfc2be136f7bc51ba5f72e5ef9f4428953dd9de461a2484"
+    },
+    {
+      "filename": "bosera_inflation_qdii_2020-11-05.pdf",
+      "fund_name": "博时抗通胀增强回报",
+      "fund_manager": "博时基金",
+      "fund_code": "050020",
+      "asset_type": "qdii_multi_asset_fof",
+      "published_at": "2020-11-05",
+      "source_url": "https://www.bosera.com/common/downloadFile.do?fileId=416F5E5418B8056B3DB7D30C7866AEAB",
+      "sha256": "a556466a185654ea5a287c72c684f346854f3078570f9bdfb4054b3bf0a336cd"
+    },
+    {
+      "filename": "99fund_csi800_etf_2026-03-30.pdf",
+      "fund_name": "添富中证800ETF",
+      "fund_manager": "汇添富基金",
+      "fund_code": "515800",
+      "asset_type": "equity_index_etf",
+      "published_at": "2026-03-30",
+      "source_url": "https://www.99fund.com/announcement/zx/upload/2026/20260327/565d09444040403e966ffc14d4a9616b.pdf",
+      "sha256": "e3ae1b830ac2af736f4414549214e43e9cb4a362569133720ba1626978f30fb5"
+    },
+    {
+      "filename": "99fund_technology_mixed_c_2025-12-16.pdf",
+      "fund_name": "汇添富科技领先混合C",
+      "fund_manager": "汇添富基金",
+      "fund_code": "025881",
+      "asset_type": "technology_mixed_fund",
+      "published_at": "2025-12-17",
+      "source_url": "https://www.99fund.com/announcement/zx/upload/2025/20251216/2e7c8180fe024243ba480e0d72db869d.pdf",
+      "sha256": "47cb4d7f7d9872923c53ba9829436996ef23a127b091775e3e9d9d0fff64cbcd"
+    },
+    {
+      "filename": "99fund_consumer_etf_2024-06-06.pdf",
+      "fund_name": "汇添富中证主要消费ETF",
+      "fund_manager": "汇添富基金",
+      "fund_code": "159928",
+      "asset_type": "sector_equity_index_etf",
+      "published_at": "2024-06-07",
+      "source_url": "https://www.99fund.com/upload/20240606/202406061717666797980.pdf",
+      "sha256": "98bd13c1c504d9ba0e281c5a8a09843c26e925cb17666404984f051a77c74f42"
+    },
+    {
+      "filename": "99fund_steady_return_bond_a_2023-07-13.pdf",
+      "fund_name": "汇添富稳健回报债券A",
+      "fund_manager": "汇添富基金",
+      "fund_code": "018830",
+      "asset_type": "secondary_bond_fund",
+      "published_at": "2023-07-14",
+      "source_url": "https://www.99fund.com/upload/20230713/202307131689247575844.pdf",
+      "sha256": "9caedacbcd3f52bf0ceefb10b6dbab7f16a3f2432327c77d5b881ceba102a9db"
+    },
+    {
+      "filename": "guangfa_fenghe_bond_a_2026-10-27.pdf",
+      "fund_name": "广发丰和债券A",
+      "fund_manager": "广发基金",
+      "fund_code": "029099",
+      "asset_type": "secondary_bond_fund",
+      "published_at": "2026-10-27",
+      "source_url": "https://www.gffunds.com.cn/jjgg/flwj/202610/P020261027314813146416.pdf",
+      "sha256": "ae2cd6c25b593e9e9f199f0ddd55f35cd185c4fd73cfbab7569b77c18661ccfa"
+    },
+    {
+      "filename": "guangfa_csi_medical_etf_2026-10-26.pdf",
+      "fund_name": "广发中证医疗ETF",
+      "fund_manager": "广发基金",
+      "fund_code": "560260",
+      "asset_type": "sector_equity_index_etf",
+      "published_at": "2026-10-26",
+      "source_url": "https://www.gffunds.com.cn/jjgg/flwj/202610/P020261026314708176979.pdf",
+      "sha256": "7d3b318e256a9f068d546e8cdd752e19f7cd75212cc509dd0c00b3c1ff3bc182"
+    },
+    {
+      "filename": "cmf_value_selection_mixed_2025-05-28.pdf",
+      "fund_name": "招商价值严选混合",
+      "fund_manager": "招商基金",
+      "fund_code": "024464",
+      "asset_type": "equity_oriented_mixed_fund",
+      "published_at": "2025-05-28",
+      "source_url": "https://cmfchina.com/fundarticle/20250528/20015932586991.pdf",
+      "sha256": "c851952bcfd7742bc1d1ff2ea32eb512c24e38087034114ded5935ec33eb5f30"
+    },
+    {
+      "filename": "cmf_money_b_2025-06-17.pdf",
+      "fund_name": "招商招金宝货币B",
+      "fund_manager": "招商基金",
+      "fund_code": "000651",
+      "asset_type": "money_market_fund",
+      "published_at": "2025-06-17",
+      "source_url": "https://cmfchina.com/fundarticle/20250617/20016270000101.pdf",
+      "sha256": "e141e21603e873d6b358932787084dbe8e9072696b265917cc9378aec376ca21"
+    }
+  ]
+}

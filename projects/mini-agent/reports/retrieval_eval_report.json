@@ -1,0 +1,113 @@
+{
+  "dataset": "fund-retrieval-smoke",
+  "version": 1,
+  "split": "smoke",
+  "document_count": 4,
+  "case_count": 12,
+  "methods": {
+    "keyword": {
+      "total_cases": 12,
+      "answerable_cases": 8,
+      "unanswerable_cases": 4,
+      "hit_at_1": 0.5,
+      "hit_at_k": 0.5,
+      "mrr": 0.5,
+      "rejection_rate": 1.0,
+      "limit": 3,
+      "by_category": {
+        "exact": {
+          "total_cases": 3,
+          "answerable_cases": 3,
+          "unanswerable_cases": 0,
+          "hit_at_1": 1.0,
+          "hit_at_k": 1.0,
+          "mrr": 1.0,
+          "rejection_rate": 0.0
+        },
+        "paraphrase": {
+          "total_cases": 4,
+          "answerable_cases": 4,
+          "unanswerable_cases": 0,
+          "hit_at_1": 0.0,
+          "hit_at_k": 0.0,
+          "mrr": 0.0,
+          "rejection_rate": 0.0
+        },
+        "short_query": {
+          "total_cases": 1,
+          "answerable_cases": 1,
+          "unanswerable_cases": 0,
+          "hit_at_1": 1.0,
+          "hit_at_k": 1.0,
+          "mrr": 1.0,
+          "rejection_rate": 0.0
+        },
+        "unanswerable": {
+          "total_cases": 4,
+          "answerable_cases": 0,
+          "unanswerable_cases": 4,
+          "hit_at_1": 0.0,
+          "hit_at_k": 0.0,
+          "mrr": 0.0,
+          "rejection_rate": 1.0
+        }
+      },
+      "latency_ms": {
+        "p50": 0.0626,
+        "p95": 0.0809
+      }
+    },
+    "ngram": {
+      "total_cases": 12,
+      "answerable_cases": 8,
+      "unanswerable_cases": 4,
+      "hit_at_1": 1.0,
+      "hit_at_k": 1.0,
+      "mrr": 1.0,
+      "rejection_rate": 1.0,
+      "limit": 3,
+      "by_category": {
+        "exact": {
+          "total_cases": 3,
+          "answerable_cases": 3,
+          "unanswerable_cases": 0,
+          "hit_at_1": 1.0,
+          "hit_at_k": 1.0,
+          "mrr": 1.0,
+          "rejection_rate": 0.0
+        },
+        "paraphrase": {
+          "total_cases": 4,
+          "answerable_cases": 4,
+          "unanswerable_cases": 0,
+          "hit_at_1": 1.0,
+          "hit_at_k": 1.0,
+          "mrr": 1.0,
+          "rejection_rate": 0.0
+        },
+        "short_query": {
+          "total_cases": 1,
+          "answerable_cases": 1,
+          "unanswerable_cases": 0,
+          "hit_at_1": 1.0,
+          "hit_at_k": 1.0,
+          "mrr": 1.0,
+          "rejection_rate": 0.0
+        },
+        "unanswerable": {
+          "total_cases": 4,
+          "answerable_cases": 0,
+          "unanswerable_cases": 4,
+          "hit_at_1": 0.0,
+          "hit_at_k": 0.0,
+          "mrr": 0.0,
+          "rejection_rate": 1.0
+        }
+      },
+      "latency_ms": {
+        "p50": 0.0861,
+        "p95": 0.104
+      }
+    }
+  }
+}

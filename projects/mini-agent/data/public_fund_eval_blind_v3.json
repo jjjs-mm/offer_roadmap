@@ -1,0 +1,19 @@
+{
+  "name": "public-fund-pdf-retrieval-blind-v3-external-source",
+  "version": 3,
+  "split": "blind",
+  "frozen": true,
+  "created_after_dev_v3": true,
+  "cases": [
+    {"case_id": "blind-v3-crude-objective", "category": "objective", "query": "这只原油主题产品想实现怎样的投资回报目标？", "selected_source": "jiashi_crude_qdii_lof_2020-08-28.pdf", "expected_source": "jiashi_crude_qdii_lof_2020-08-28.pdf", "expected_pages": [1]},
+    {"case_id": "blind-v3-crude-fof-ratio", "category": "scope", "query": "作为 FOF，它投向公募基金的最低比例是多少？", "selected_source": "jiashi_crude_qdii_lof_2020-08-28.pdf", "expected_source": "jiashi_crude_qdii_lof_2020-08-28.pdf", "expected_pages": [2]},
+    {"case_id": "blind-v3-crude-strategy", "category": "strategy", "query": "原油 QDII 通过哪些方法完成资产配置？", "selected_source": "jiashi_crude_qdii_lof_2020-08-28.pdf", "expected_source": "jiashi_crude_qdii_lof_2020-08-28.pdf", "expected_pages": [2]},
+    {"case_id": "blind-v3-crude-risk", "category": "risk", "query": "它的风险收益特征属于什么水平？", "selected_source": "jiashi_crude_qdii_lof_2020-08-28.pdf", "expected_source": "jiashi_crude_qdii_lof_2020-08-28.pdf", "expected_pages": [2]},
+    {"case_id": "blind-v3-crude-redemption", "category": "fee", "query": "场外持有不足七天卖出时，赎回费怎么收？", "selected_source": "jiashi_crude_qdii_lof_2020-08-28.pdf", "expected_source": "jiashi_crude_qdii_lof_2020-08-28.pdf", "expected_pages": [3]},
+    {"case_id": "blind-v3-crude-future-return", "category": "unanswerable", "query": "2028 年这只产品的收益率预计是多少？", "selected_source": "jiashi_crude_qdii_lof_2020-08-28.pdf", "expected_source": null, "expected_pages": []},
+    {"case_id": "blind-v3-crude-carbon", "category": "unanswerable", "query": "资料有没有披露原油投资的碳排放强度？", "selected_source": "jiashi_crude_qdii_lof_2020-08-28.pdf", "expected_source": null, "expected_pages": []},
+    {"case_id": "blind-v3-crude-manager-email", "category": "unanswerable", "query": "能给我基金经理的私人邮箱吗？", "selected_source": "jiashi_crude_qdii_lof_2020-08-28.pdf", "expected_source": null, "expected_pages": []},
+    {"case_id": "blind-v3-crude-rating", "category": "unanswerable", "query": "这只原油基金的晨星星级是多少？", "selected_source": "jiashi_crude_qdii_lof_2020-08-28.pdf", "expected_source": null, "expected_pages": []},
+    {"case_id": "blind-v3-crude-holding", "category": "unanswerable", "query": "基金当前持有英伟达的比例是多少？", "selected_source": "jiashi_crude_qdii_lof_2020-08-28.pdf", "expected_source": null, "expected_pages": []}
+  ]
+}

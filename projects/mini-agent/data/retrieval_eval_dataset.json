@@ -1,0 +1,25 @@
+{
+  "name": "fund-retrieval-smoke",
+  "version": 1,
+  "split": "smoke",
+  "documents": [
+    {"filename": "fees.md", "content": "费用说明：管理费每年0.50%，托管费每年0.10%。"},
+    {"filename": "objective.md", "content": "投资目标：采用被动策略跟踪沪深300指数，力求减小跟踪误差。"},
+    {"filename": "risks.md", "content": "风险提示：股票市场波动可能造成本金亏损；债券资产还面临利率风险和信用风险。"},
+    {"filename": "liquidity.md", "content": "交易规则：申购与赎回申请通常在T+1日确认份额，具体以基金公告为准。"}
+  ],
+  "cases": [
+    {"case_id": "smoke-exact-001", "category": "exact", "query": "管理费", "expected_sources": ["fees.md"]},
+    {"case_id": "smoke-paraphrase-001", "category": "paraphrase", "query": "这只基金每年收取哪些固定费用？", "expected_sources": ["fees.md"]},
+    {"case_id": "smoke-exact-002", "category": "exact", "query": "沪深300指数", "expected_sources": ["objective.md"]},
+    {"case_id": "smoke-paraphrase-002", "category": "paraphrase", "query": "这只基金采用什么投资策略？", "expected_sources": ["objective.md"]},
+    {"case_id": "smoke-exact-003", "category": "exact", "query": "市场波动", "expected_sources": ["risks.md"]},
+    {"case_id": "smoke-paraphrase-003", "category": "paraphrase", "query": "债券资产可能面临哪些风险？", "expected_sources": ["risks.md"]},
+    {"case_id": "smoke-short-001", "category": "short_query", "query": "T+1", "expected_sources": ["liquidity.md"]},
+    {"case_id": "smoke-paraphrase-004", "category": "paraphrase", "query": "提交赎回申请后何时确认份额？", "expected_sources": ["liquidity.md"]},
+    {"case_id": "smoke-negative-001", "category": "unanswerable", "query": "赎回费是多少？", "expected_sources": []},
+    {"case_id": "smoke-negative-002", "category": "unanswerable", "query": "基金经理是谁？", "expected_sources": []},
+    {"case_id": "smoke-negative-003", "category": "unanswerable", "query": "近一年收益率是多少？", "expected_sources": []},
+    {"case_id": "smoke-negative-004", "category": "unanswerable", "query": "最低投资金额是多少？", "expected_sources": []}
+  ]
+}

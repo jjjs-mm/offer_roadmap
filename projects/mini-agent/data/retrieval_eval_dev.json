@@ -1,0 +1,52 @@
+{
+  "name": "fund-retrieval-dev",
+  "version": 1,
+  "split": "dev",
+  "documents_file": "retrieval_eval_corpus.json",
+  "cases": [
+    {"case_id": "dev-exact-001", "category": "exact", "query": "管理费年费率0.50%", "expected_sources": ["equity_fees.md"]},
+    {"case_id": "dev-exact-002", "category": "exact", "query": "销售服务费年费率0.20%", "expected_sources": ["bond_fees.md"]},
+    {"case_id": "dev-exact-003", "category": "exact", "query": "紧密跟踪沪深300指数", "expected_sources": ["equity_objective.md"]},
+    {"case_id": "dev-exact-004", "category": "exact", "query": "中短久期债券", "expected_sources": ["bond_objective.md"]},
+    {"case_id": "dev-exact-005", "category": "exact", "query": "跟踪误差", "expected_sources": ["equity_risks.md"]},
+    {"case_id": "dev-exact-006", "category": "exact", "query": "信用风险", "expected_sources": ["bond_risks.md"]},
+    {"case_id": "dev-exact-007", "category": "exact", "query": "T+1日确认份额", "expected_sources": ["trading_rules.md"]},
+    {"case_id": "dev-exact-008", "category": "exact", "query": "基金经理张伟", "expected_sources": ["manager.md"]},
+
+    {"case_id": "dev-paraphrase-001", "category": "paraphrase", "query": "股票指数基金一年收多少管理费用？", "expected_sources": ["equity_fees.md"]},
+    {"case_id": "dev-paraphrase-002", "category": "paraphrase", "query": "中短债产品会收取哪些固定费用？", "expected_sources": ["bond_fees.md"]},
+    {"case_id": "dev-paraphrase-003", "category": "paraphrase", "query": "这只指数产品想追踪什么标的？", "expected_sources": ["equity_objective.md"]},
+    {"case_id": "dev-paraphrase-004", "category": "paraphrase", "query": "债券产品主要把钱投向哪里？", "expected_sources": ["bond_objective.md"]},
+    {"case_id": "dev-paraphrase-005", "category": "paraphrase", "query": "股票产品的本金可能亏损吗？", "expected_sources": ["equity_risks.md"]},
+    {"case_id": "dev-paraphrase-006", "category": "paraphrase", "query": "市场利率上涨会怎样影响债基？", "expected_sources": ["bond_risks.md"]},
+    {"case_id": "dev-paraphrase-007", "category": "paraphrase", "query": "提交赎回后什么时候确认？", "expected_sources": ["trading_rules.md"]},
+    {"case_id": "dev-paraphrase-008", "category": "paraphrase", "query": "赎回的钱通常几天到账？", "expected_sources": ["trading_rules.md"]},
+    {"case_id": "dev-paraphrase-009", "category": "paraphrase", "query": "现在由谁负责管理这只产品？", "expected_sources": ["manager.md"]},
+    {"case_id": "dev-paraphrase-010", "category": "paraphrase", "query": "当前管理人有多少年从业经验？", "expected_sources": ["manager.md"]},
+    {"case_id": "dev-paraphrase-011", "category": "paraphrase", "query": "用什么标准比较这只基金的业绩？", "expected_sources": ["benchmark.md"]},
+    {"case_id": "dev-paraphrase-012", "category": "paraphrase", "query": "没有选择分红方式时会怎么处理？", "expected_sources": ["dividend.md"]},
+
+    {"case_id": "dev-similar-001", "category": "similar_document", "query": "沪深300产品的管理费率", "expected_sources": ["equity_fees.md"]},
+    {"case_id": "dev-similar-002", "category": "similar_document", "query": "中短债产品的管理费率", "expected_sources": ["bond_fees.md"]},
+    {"case_id": "dev-similar-003", "category": "similar_document", "query": "沪深300产品有哪些风险", "expected_sources": ["equity_risks.md"]},
+    {"case_id": "dev-similar-004", "category": "similar_document", "query": "中短债产品有哪些风险", "expected_sources": ["bond_risks.md"]},
+    {"case_id": "dev-similar-005", "category": "similar_document", "query": "沪深300产品的投资目标", "expected_sources": ["equity_objective.md"]},
+    {"case_id": "dev-similar-006", "category": "similar_document", "query": "沪深300产品的业绩基准构成", "expected_sources": ["benchmark.md"]},
+    {"case_id": "dev-similar-007", "category": "similar_document", "query": "首次买入基金最低多少钱", "expected_sources": ["purchase_limit.md"]},
+    {"case_id": "dev-similar-008", "category": "similar_document", "query": "当前基金资产净值规模", "expected_sources": ["scale.md"]},
+
+    {"case_id": "dev-short-001", "category": "short_query", "query": "0.50%", "expected_sources": ["equity_fees.md"]},
+    {"case_id": "dev-short-002", "category": "short_query", "query": "0.08%", "expected_sources": ["bond_fees.md"]},
+    {"case_id": "dev-short-003", "category": "short_query", "query": "T+3", "expected_sources": ["trading_rules.md"]},
+    {"case_id": "dev-short-004", "category": "short_query", "query": "现金分红", "expected_sources": ["dividend.md"]},
+
+    {"case_id": "dev-negative-001", "category": "hard_negative", "query": "赎回费率是多少？", "expected_sources": []},
+    {"case_id": "dev-negative-002", "category": "hard_negative", "query": "基金经理毕业于哪所大学？", "expected_sources": []},
+    {"case_id": "dev-negative-003", "category": "hard_negative", "query": "近一年收益率是多少？", "expected_sources": []},
+    {"case_id": "dev-negative-004", "category": "hard_negative", "query": "历史最大回撤是多少？", "expected_sources": []},
+    {"case_id": "dev-negative-005", "category": "hard_negative", "query": "这只产品的晨星评级是多少？", "expected_sources": []},
+    {"case_id": "dev-negative-006", "category": "hard_negative", "query": "跟踪指数当前市盈率是多少？", "expected_sources": []},
+    {"case_id": "dev-negative-007", "category": "hard_negative", "query": "基金托管银行是哪一家？", "expected_sources": []},
+    {"case_id": "dev-negative-008", "category": "hard_negative", "query": "分红需要缴纳多少税？", "expected_sources": []}
+  ]
+}

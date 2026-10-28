@@ -1,0 +1,120 @@
+{
+  "name": "fund-rag-answer-smoke",
+  "version": 1,
+  "documents": [
+    {
+      "filename": "fund_research_demo.md",
+      "content": "# 示例基金资料（虚构，仅用于功能测试）\n\n投资目标：跟踪宽基股票指数。\n管理费：每年 0.50%。\n托管费：每年 0.10%。\n风险提示：股票市场波动可能导致本金亏损。"
+    }
+  ],
+  "cases": [
+    {
+      "case_id": "objective-exact-001",
+      "category": "answerable_exact",
+      "question": "这只基金的投资目标是什么？",
+      "document_source": "fund_research_demo.md",
+      "expected_answer_terms": ["跟踪", "宽基股票指数"],
+      "expected_sources": ["fund_research_demo.md"],
+      "should_abstain": false
+    },
+    {
+      "case_id": "objective-paraphrase-002",
+      "category": "answerable_paraphrase",
+      "question": "它主要想复制哪类市场表现？",
+      "document_source": "fund_research_demo.md",
+      "expected_answer_terms": ["宽基股票指数"],
+      "expected_sources": ["fund_research_demo.md"],
+      "should_abstain": false
+    },
+    {
+      "case_id": "management-fee-exact-003",
+      "category": "answerable_exact",
+      "question": "管理费是多少？",
+      "document_source": "fund_research_demo.md",
+      "expected_answer_terms": ["管理费", "0.50%"],
+      "expected_sources": ["fund_research_demo.md"],
+      "should_abstain": false
+    },
+    {
+      "case_id": "management-fee-paraphrase-004",
+      "category": "answerable_paraphrase",
+      "question": "每年收取的管理费率是多少？",
+      "document_source": "fund_research_demo.md",
+      "expected_answer_terms": ["管理费", "0.50%"],
+      "expected_sources": ["fund_research_demo.md"],
+      "should_abstain": false
+    },
+    {
+      "case_id": "custody-fee-exact-005",
+      "category": "answerable_exact",
+      "question": "托管费是多少？",
+      "document_source": "fund_research_demo.md",
+      "expected_answer_terms": [["托管费", "托管服务费"], "0.10%"],
+      "expected_sources": ["fund_research_demo.md"],
+      "should_abstain": false
+    },
+    {
+      "case_id": "custody-fee-paraphrase-006",
+      "category": "answerable_paraphrase",
+      "question": "托管服务每年怎么收费？",
+      "document_source": "fund_research_demo.md",
+      "expected_answer_terms": [["托管费", "托管服务费"], "0.10%"],
+      "expected_sources": ["fund_research_demo.md"],
+      "should_abstain": false
+    },
+    {
+      "case_id": "risk-exact-007",
+      "category": "answerable_exact",
+      "question": "这只基金有什么风险？",
+      "document_source": "fund_research_demo.md",
+      "expected_answer_terms": ["股票市场波动", "本金亏损"],
+      "expected_sources": ["fund_research_demo.md"],
+      "should_abstain": false
+    },
+    {
+      "case_id": "risk-paraphrase-008",
+      "category": "answerable_paraphrase",
+      "question": "投资者的本金会不会受损？",
+      "document_source": "fund_research_demo.md",
+      "expected_answer_terms": ["本金", "亏损"],
+      "expected_sources": ["fund_research_demo.md"],
+      "should_abstain": false
+    },
+    {
+      "case_id": "redemption-fee-unknown-009",
+      "category": "unanswerable",
+      "question": "赎回费是多少？",
+      "document_source": "fund_research_demo.md",
+      "expected_answer_terms": [],
+      "expected_sources": [],
+      "should_abstain": true
+    },
+    {
+      "case_id": "manager-unknown-010",
+      "category": "unanswerable",
+      "question": "基金经理是谁？",
+      "document_source": "fund_research_demo.md",
+      "expected_answer_terms": [],
+      "expected_sources": [],
+      "should_abstain": true
+    },
+    {
+      "case_id": "return-unknown-011",
+      "category": "unanswerable",
+      "question": "近一年收益率是多少？",
+      "document_source": "fund_research_demo.md",
+      "expected_answer_terms": [],
+      "expected_sources": [],
+      "should_abstain": true
+    },
+    {
+      "case_id": "minimum-purchase-unknown-012",
+      "category": "unanswerable",
+      "question": "最低投资金额是多少？",
+      "document_source": "fund_research_demo.md",
+      "expected_answer_terms": [],
+      "expected_sources": [],
+      "should_abstain": true
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "name": "public-fund-pdf-retrieval-blind-v2",
+  "version": 2,
+  "split": "blind",
+  "frozen": true,
+  "created_after_query_normalizer_v1": true,
+  "cases": [
+    {"case_id": "blind-v2-hs300-etf-allocation", "category": "scope", "query": "这个联接产品主要通过配置什么来实现跟踪？", "selected_source": "chinaamc_hs300_etf_link_a_2026-05-29.pdf", "expected_source": "chinaamc_hs300_etf_link_a_2026-05-29.pdf", "expected_pages": [1]},
+    {"case_id": "blind-v2-hs300-custody-fee", "category": "fee", "query": "基金托管这一项的年费率是多少？", "selected_source": "chinaamc_hs300_etf_link_a_2026-05-29.pdf", "expected_source": "chinaamc_hs300_etf_link_a_2026-05-29.pdf", "expected_pages": [3]},
+    {"case_id": "blind-v2-hs300-esg", "category": "unanswerable", "query": "该基金有没有 ESG 评级？", "selected_source": "chinaamc_hs300_etf_link_a_2026-05-29.pdf", "expected_source": null, "expected_pages": []},
+
+    {"case_id": "blind-v2-short-bond-duration", "category": "scope", "query": "这只中短债基金对组合剩余期限有什么限制？", "selected_source": "pingan_short_bond_2026-07-27.pdf", "expected_source": "pingan_short_bond_2026-07-27.pdf", "expected_pages": [2]},
+    {"case_id": "blind-v2-short-bond-risk", "category": "risk", "query": "持有这只债基主要要承担什么风险？", "selected_source": "pingan_short_bond_2026-07-27.pdf", "expected_source": "pingan_short_bond_2026-07-27.pdf", "expected_pages": [6]},
+    {"case_id": "blind-v2-short-bond-next-year", "category": "unanswerable", "query": "它明年的年化回报会是多少？", "selected_source": "pingan_short_bond_2026-07-27.pdf", "expected_source": null, "expected_pages": []},
+
+    {"case_id": "blind-v2-money-assets", "category": "scope", "query": "这个货币基金通常能配置哪些资产类别？", "selected_source": "efunds_money_market_a_2026-08-11.pdf", "expected_source": "efunds_money_market_a_2026-08-11.pdf", "expected_pages": [1]},
+    {"case_id": "blind-v2-money-fee-waiver", "category": "fee", "query": "买入和卖出时会收申购费或赎回费吗？", "selected_source": "efunds_money_market_a_2026-08-11.pdf", "expected_source": "efunds_money_market_a_2026-08-11.pdf", "expected_pages": [2]},
+    {"case_id": "blind-v2-money-manager-wechat", "category": "unanswerable", "query": "能提供基金经理的个人微信吗？", "selected_source": "efunds_money_market_a_2026-08-11.pdf", "expected_source": null, "expected_pages": []},
+
+    {"case_id": "blind-v2-quant-equity-range", "category": "scope", "query": "量化平衡基金的权益仓位可以处在什么范围？", "selected_source": "bosera_quant_balanced_mixed_2021-08-25.pdf", "expected_source": "bosera_quant_balanced_mixed_2021-08-25.pdf", "expected_pages": [1]},
+    {"case_id": "blind-v2-quant-risk", "category": "risk", "query": "这款量化产品属于哪一档风险收益类别？", "selected_source": "bosera_quant_balanced_mixed_2021-08-25.pdf", "expected_source": "bosera_quant_balanced_mixed_2021-08-25.pdf", "expected_pages": [2]},
+    {"case_id": "blind-v2-quant-carbon", "category": "unanswerable", "query": "这只基金披露过组合碳足迹吗？", "selected_source": "bosera_quant_balanced_mixed_2021-08-25.pdf", "expected_source": null, "expected_pages": []},
+
+    {"case_id": "blind-v2-pure-bond-equity", "category": "scope", "query": "纯债产品会参与权益市场投资吗？", "selected_source": "bosera_fuxin_pure_bond_2020-08-27.pdf", "expected_source": "bosera_fuxin_pure_bond_2020-08-27.pdf", "expected_pages": [1]},
+    {"case_id": "blind-v2-pure-bond-custody-fee", "category": "fee", "query": "托管服务每年按多少比例收费？", "selected_source": "bosera_fuxin_pure_bond_2020-08-27.pdf", "expected_source": "bosera_fuxin_pure_bond_2020-08-27.pdf", "expected_pages": [3]},
+    {"case_id": "blind-v2-pure-bond-star", "category": "unanswerable", "query": "第三方给这只基金打了几颗星？", "selected_source": "bosera_fuxin_pure_bond_2020-08-27.pdf", "expected_source": null, "expected_pages": []},
+
+    {"case_id": "blind-v2-sse-manager", "category": "manager", "query": "负责管理这只上证综指 ETF 的是谁？", "selected_source": "fullgoal_sse_composite_etf_2026-01-19.pdf", "expected_source": "fullgoal_sse_composite_etf_2026-01-19.pdf", "expected_pages": [1]},
+    {"case_id": "blind-v2-sse-index", "category": "scope", "query": "该 ETF 对应的基准指数是哪一个？", "selected_source": "fullgoal_sse_composite_etf_2026-01-19.pdf", "expected_source": "fullgoal_sse_composite_etf_2026-01-19.pdf", "expected_pages": [1]},
+    {"case_id": "blind-v2-sse-next-quarter", "category": "unanswerable", "query": "下个季度预计能涨多少？", "selected_source": "fullgoal_sse_composite_etf_2026-01-19.pdf", "expected_source": null, "expected_pages": []},
+
+    {"case_id": "blind-v2-quality-selection", "category": "strategy", "query": "优质企业混合基金筛选公司时看重什么？", "selected_source": "fullgoal_quality_enterprise_mixed_a_2026-03-09.pdf", "expected_source": "fullgoal_quality_enterprise_mixed_a_2026-03-09.pdf", "expected_pages": [1]},
+    {"case_id": "blind-v2-quality-risk", "category": "risk", "query": "该混合基金的风险收益定位是什么？", "selected_source": "fullgoal_quality_enterprise_mixed_a_2026-03-09.pdf", "expected_source": "fullgoal_quality_enterprise_mixed_a_2026-03-09.pdf", "expected_pages": [2]},
+    {"case_id": "blind-v2-quality-manager-phone", "category": "unanswerable", "query": "基金经理的私人手机号是多少？", "selected_source": "fullgoal_quality_enterprise_mixed_a_2026-03-09.pdf", "expected_source": null, "expected_pages": []},
+
+    {"case_id": "blind-v2-hstech-replication", "category": "strategy", "query": "恒生科技 ETF 是完全复制指数还是抽样复制？", "selected_source": "efunds_hang_seng_tech_etf_qdii_2026-02-12.pdf", "expected_source": "efunds_hang_seng_tech_etf_qdii_2026-02-12.pdf", "expected_pages": [2]},
+    {"case_id": "blind-v2-hstech-fee", "category": "fee", "query": "这只 QDII ETF 的年度管理成本里托管费是多少？", "selected_source": "efunds_hang_seng_tech_etf_qdii_2026-02-12.pdf", "expected_source": "efunds_hang_seng_tech_etf_qdii_2026-02-12.pdf", "expected_pages": [4]},
+    {"case_id": "blind-v2-hstech-rating", "category": "unanswerable", "query": "资料中有晨星星级评价吗？", "selected_source": "efunds_hang_seng_tech_etf_qdii_2026-02-12.pdf", "expected_source": null, "expected_pages": []},
+
+    {"case_id": "blind-v2-nasdaq-ratio", "category": "scope", "query": "纳斯达克联接基金至少要有多少资产投向目标 ETF？", "selected_source": "bosera_nasdaq100_etf_link_qdii_a_2026-06-26.pdf", "expected_source": "bosera_nasdaq100_etf_link_qdii_a_2026-06-26.pdf", "expected_pages": [2]},
+    {"case_id": "blind-v2-nasdaq-redemption", "category": "fee", "query": "买入后不到一周就卖出，赎回收费标准是什么？", "selected_source": "bosera_nasdaq100_etf_link_qdii_a_2026-06-26.pdf", "expected_source": "bosera_nasdaq100_etf_link_qdii_a_2026-06-26.pdf", "expected_pages": [3]},
+    {"case_id": "blind-v2-nasdaq-return", "category": "unanswerable", "query": "未来一年的收益能预测到多少？", "selected_source": "bosera_nasdaq100_etf_link_qdii_a_2026-06-26.pdf", "expected_source": null, "expected_pages": []},
+
+    {"case_id": "blind-v2-global-markets", "category": "scope", "query": "全球配置基金会覆盖哪些海外投资市场？", "selected_source": "efunds_global_allocation_qdii_a_2026-02-12.pdf", "expected_source": "efunds_global_allocation_qdii_a_2026-02-12.pdf", "expected_pages": [1, 2]},
+    {"case_id": "blind-v2-global-strategy", "category": "strategy", "query": "这只全球配置基金采用怎样的资产配置思路？", "selected_source": "efunds_global_allocation_qdii_a_2026-02-12.pdf", "expected_source": "efunds_global_allocation_qdii_a_2026-02-12.pdf", "expected_pages": [2]},
+    {"case_id": "blind-v2-global-carbon", "category": "unanswerable", "query": "该产品公布了投资组合的碳排放强度吗？", "selected_source": "efunds_global_allocation_qdii_a_2026-02-12.pdf", "expected_source": null, "expected_pages": []}
+  ]
+}

@@ -1,0 +1,122 @@
+{
+  "dataset": "public-fund-pdf-retrieval-dev",
+  "version": 5,
+  "split": "dev",
+  "document_count": 20,
+  "case_count": 114,
+  "limit": 3,
+  "query_normalization": "conservative_fund_aliases_v1",
+  "evaluation_time_ms": 15109.8644,
+  "methods": {
+    "catalog_ngram": {
+      "total_cases": 114,
+      "answerable_cases": 86,
+      "unanswerable_cases": 28,
+      "source_hit_at_1": 0.9651162790697675,
+      "source_hit_at_k": 0.9767441860465116,
+      "source_mrr": 0.9689922480620156,
+      "page_hit_at_k": 0.7093023255813954,
+      "rejection_rate": 0.17857142857142858
+    },
+    "selected_document_ngram": {
+      "total_cases": 114,
+      "answerable_cases": 86,
+      "unanswerable_cases": 28,
+      "page_hit_at_1": 0.9069767441860465,
+      "page_hit_at_k": 0.9767441860465116,
+      "rejection_rate": 0.17857142857142858,
+      "evidence_gate_accuracy": 0.9298245614035088,
+      "answerable_pass_rate": 0.9069767441860465,
+      "unanswerable_rejection_rate": 1.0,
+      "false_answer_rate": 0.0,
+      "answerable_rejected_case_ids": [
+        "money-risk-level",
+        "corpus-v4-money-instruments",
+        "corpus-v4-dividend-stock-ratio",
+        "corpus-v4-dividend-strategy",
+        "corpus-v4-csi500-method",
+        "corpus-v5-csi800-strategy",
+        "corpus-v5-consumer-strategy",
+        "corpus-v5-steady-bond-equity"
+      ],
+      "unanswerable_accepted_case_ids": [],
+      "page_miss_case_ids": [
+        "money-risk-level",
+        "corpus-v4-money-redemption"
+      ]
+    },
+    "catalog_vector": {
+      "total_cases": 114,
+      "answerable_cases": 86,
+      "unanswerable_cases": 28,
+      "source_hit_at_1": 0.8023255813953488,
+      "source_hit_at_k": 0.9302325581395349,
+      "source_mrr": 0.8624031007751939,
+      "page_hit_at_k": 0.6744186046511628,
+      "rejection_rate": 0.0
+    },
+    "catalog_hybrid": {
+      "total_cases": 114,
+      "answerable_cases": 86,
+      "unanswerable_cases": 28,
+      "source_hit_at_1": 0.9534883720930233,
+      "source_hit_at_k": 0.9883720930232558,
+      "source_mrr": 0.9709302325581395,
+      "page_hit_at_k": 0.7093023255813954,
+      "rejection_rate": 0.0
+    },
+    "selected_document_vector": {
+      "total_cases": 114,
+      "answerable_cases": 86,
+      "unanswerable_cases": 28,
+      "page_hit_at_1": 0.7558139534883721,
+      "page_hit_at_k": 0.9883720930232558,
+      "rejection_rate": 0.10714285714285714,
+      "evidence_gate_accuracy": 0.9210526315789473,
+      "answerable_pass_rate": 0.8953488372093024,
+      "unanswerable_rejection_rate": 1.0,
+      "false_answer_rate": 0.0,
+      "answerable_rejected_case_ids": [
+        "quant-objective",
+        "quality-mixed-objective",
+        "corpus-v4-money-instruments",
+        "corpus-v4-dividend-stock-ratio",
+        "corpus-v4-dividend-strategy",
+        "corpus-v4-csi500-method",
+        "corpus-v5-csi800-strategy",
+        "corpus-v5-consumer-strategy",
+        "corpus-v5-steady-bond-equity"
+      ],
+      "unanswerable_accepted_case_ids": [],
+      "page_miss_case_ids": [
+        "corpus-v4-money-redemption"
+      ]
+    },
+    "selected_document_hybrid": {
+      "total_cases": 114,
+      "answerable_cases": 86,
+      "unanswerable_cases": 28,
+      "page_hit_at_1": 0.9069767441860465,
+      "page_hit_at_k": 0.9883720930232558,
+      "rejection_rate": 0.10714285714285714,
+      "evidence_gate_accuracy": 0.9298245614035088,
+      "answerable_pass_rate": 0.9069767441860465,
+      "unanswerable_rejection_rate": 1.0,
+      "false_answer_rate": 0.0,
+      "answerable_rejected_case_ids": [
+        "quant-objective",
+        "corpus-v4-money-instruments",
+        "corpus-v4-dividend-stock-ratio",
+        "corpus-v4-dividend-strategy",
+        "corpus-v4-csi500-method",
+        "corpus-v5-csi800-strategy",
+        "corpus-v5-consumer-strategy",
+        "corpus-v5-steady-bond-equity"
+      ],
+      "unanswerable_accepted_case_ids": [],
+      "page_miss_case_ids": [
+        "corpus-v4-money-redemption"
+      ]
+    }
+  }
+}

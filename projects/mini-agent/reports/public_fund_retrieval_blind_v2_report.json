@@ -1,0 +1,138 @@
+{
+  "dataset": "public-fund-pdf-retrieval-blind-v2",
+  "version": 2,
+  "split": "blind",
+  "document_count": 10,
+  "case_count": 30,
+  "limit": 3,
+  "query_normalization": "conservative_fund_aliases_v1",
+  "evaluation_time_ms": 3537.4148,
+  "methods": {
+    "catalog_ngram": {
+      "total_cases": 30,
+      "answerable_cases": 20,
+      "unanswerable_cases": 10,
+      "source_hit_at_1": 1.0,
+      "source_hit_at_k": 1.0,
+      "source_mrr": 1.0,
+      "page_hit_at_k": 0.75,
+      "rejection_rate": 0.2
+    },
+    "selected_document_ngram": {
+      "total_cases": 30,
+      "answerable_cases": 20,
+      "unanswerable_cases": 10,
+      "page_hit_at_1": 0.6,
+      "page_hit_at_k": 1.0,
+      "rejection_rate": 0.4,
+      "evidence_gate_accuracy": 0.4666666666666667,
+      "answerable_pass_rate": 0.3,
+      "unanswerable_rejection_rate": 0.8,
+      "false_answer_rate": 0.19999999999999996,
+      "answerable_rejected_case_ids": [
+        "blind-v2-hs300-etf-allocation",
+        "blind-v2-hs300-custody-fee",
+        "blind-v2-money-assets",
+        "blind-v2-quant-equity-range",
+        "blind-v2-quant-risk",
+        "blind-v2-pure-bond-equity",
+        "blind-v2-pure-bond-custody-fee",
+        "blind-v2-sse-manager",
+        "blind-v2-sse-index",
+        "blind-v2-quality-selection",
+        "blind-v2-quality-risk",
+        "blind-v2-hstech-replication",
+        "blind-v2-global-markets",
+        "blind-v2-global-strategy"
+      ],
+      "unanswerable_accepted_case_ids": [
+        "blind-v2-money-manager-wechat",
+        "blind-v2-quality-manager-phone"
+      ],
+      "page_miss_case_ids": []
+    },
+    "catalog_vector": {
+      "total_cases": 30,
+      "answerable_cases": 20,
+      "unanswerable_cases": 10,
+      "source_hit_at_1": 0.8,
+      "source_hit_at_k": 0.95,
+      "source_mrr": 0.8666666666666666,
+      "page_hit_at_k": 0.55,
+      "rejection_rate": 0.0
+    },
+    "catalog_hybrid": {
+      "total_cases": 30,
+      "answerable_cases": 20,
+      "unanswerable_cases": 10,
+      "source_hit_at_1": 1.0,
+      "source_hit_at_k": 1.0,
+      "source_mrr": 1.0,
+      "page_hit_at_k": 0.55,
+      "rejection_rate": 0.0
+    },
+    "selected_document_vector": {
+      "total_cases": 30,
+      "answerable_cases": 20,
+      "unanswerable_cases": 10,
+      "page_hit_at_1": 0.65,
+      "page_hit_at_k": 1.0,
+      "rejection_rate": 0.0,
+      "evidence_gate_accuracy": 0.5333333333333333,
+      "answerable_pass_rate": 0.3,
+      "unanswerable_rejection_rate": 1.0,
+      "false_answer_rate": 0.0,
+      "answerable_rejected_case_ids": [
+        "blind-v2-hs300-etf-allocation",
+        "blind-v2-hs300-custody-fee",
+        "blind-v2-money-assets",
+        "blind-v2-quant-equity-range",
+        "blind-v2-quant-risk",
+        "blind-v2-pure-bond-equity",
+        "blind-v2-pure-bond-custody-fee",
+        "blind-v2-sse-manager",
+        "blind-v2-sse-index",
+        "blind-v2-quality-selection",
+        "blind-v2-quality-risk",
+        "blind-v2-hstech-replication",
+        "blind-v2-global-markets",
+        "blind-v2-global-strategy"
+      ],
+      "unanswerable_accepted_case_ids": [],
+      "page_miss_case_ids": []
+    },
+    "selected_document_hybrid": {
+      "total_cases": 30,
+      "answerable_cases": 20,
+      "unanswerable_cases": 10,
+      "page_hit_at_1": 0.85,
+      "page_hit_at_k": 1.0,
+      "rejection_rate": 0.0,
+      "evidence_gate_accuracy": 0.4666666666666667,
+      "answerable_pass_rate": 0.3,
+      "unanswerable_rejection_rate": 0.8,
+      "false_answer_rate": 0.19999999999999996,
+      "answerable_rejected_case_ids": [
+        "blind-v2-hs300-etf-allocation",
+        "blind-v2-hs300-custody-fee",
+        "blind-v2-money-assets",
+        "blind-v2-quant-equity-range",
+        "blind-v2-quant-risk",
+        "blind-v2-pure-bond-equity",
+        "blind-v2-pure-bond-custody-fee",
+        "blind-v2-sse-manager",
+        "blind-v2-sse-index",
+        "blind-v2-quality-selection",
+        "blind-v2-quality-risk",
+        "blind-v2-hstech-replication",
+        "blind-v2-global-markets",
+        "blind-v2-global-strategy"
+      ],
+      "unanswerable_accepted_case_ids": [
+        "blind-v2-money-manager-wechat",
+        "blind-v2-quality-manager-phone"
+      ],
+      "page_miss_case_ids": []
+    }
+  }
+}
