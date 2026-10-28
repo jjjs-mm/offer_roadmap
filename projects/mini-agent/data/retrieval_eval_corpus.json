@@ -1,0 +1,16 @@
+{
+  "documents": [
+    {"filename": "equity_fees.md", "content": "沪深300指数基金费用：管理费年费率0.50%，托管费年费率0.10%，暂不收取销售服务费。"},
+    {"filename": "equity_objective.md", "content": "沪深300指数基金采用被动投资策略，投资目标是紧密跟踪沪深300指数并控制跟踪偏离。"},
+    {"filename": "equity_risks.md", "content": "沪深300指数基金面临股票市场波动、跟踪误差和流动性风险，净值波动可能造成本金亏损。"},
+    {"filename": "bond_fees.md", "content": "中短债基金费用：管理费年费率0.30%，托管费年费率0.08%，销售服务费年费率0.20%。"},
+    {"filename": "bond_objective.md", "content": "中短债基金主要投资中短久期债券，目标是在控制波动的基础上争取稳定收益。"},
+    {"filename": "bond_risks.md", "content": "中短债基金主要面临利率风险、信用风险和再投资风险，市场利率上升可能导致债券价格下降。"},
+    {"filename": "trading_rules.md", "content": "交易规则：申购和赎回申请通常在T+1日确认份额，赎回资金通常在T+3日到账。"},
+    {"filename": "manager.md", "content": "基金经理张伟自2024年3月起管理本基金，拥有8年证券投资管理经验。"},
+    {"filename": "benchmark.md", "content": "业绩比较基准为沪深300指数收益率乘以95%，加上银行活期存款利率税后收益率乘以5%。"},
+    {"filename": "dividend.md", "content": "基金收益分配支持现金分红和红利再投资，投资者未选择时默认采用现金分红。"},
+    {"filename": "scale.md", "content": "截至2026年9月30日，本基金资产净值规模为125亿元，基金份额总额为98亿份。"},
+    {"filename": "purchase_limit.md", "content": "首次申购最低金额为10元，追加申购最低金额为1元，单个账户持有份额不设上限。"}
+  ]
+}

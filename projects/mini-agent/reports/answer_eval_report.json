@@ -1,0 +1,92 @@
+{
+  "dataset": "answer_eval_dataset.json",
+  "base_url": "http://127.0.0.1:8003",
+  "report": {
+    "total_cases": 12,
+    "answerable_cases": 8,
+    "unanswerable_cases": 4,
+    "answer_correct_rate": 0.9166666666666666,
+    "citation_correct_rate": 0.9166666666666666,
+    "abstention_accuracy": 0.9166666666666666,
+    "overall_success_rate": 0.9166666666666666,
+    "failed_case_ids": [
+      "objective-paraphrase-002"
+    ]
+  },
+  "outputs": {
+    "objective-exact-001": {
+      "answer": "根据资料，这只基金的投资目标是**跟踪宽基股票指数**。",
+      "cited_sources": [
+        "fund_research_demo.md"
+      ],
+      "abstained": false
+    },
+    "objective-paraphrase-002": {
+      "answer": "所选资料中未检索到与问题相关的内容，无法据此回答。",
+      "cited_sources": [],
+      "abstained": true
+    },
+    "management-fee-exact-003": {
+      "answer": "根据所选资料，管理费为0.50%。",
+      "cited_sources": [
+        "fund_research_demo.md"
+      ],
+      "abstained": false
+    },
+    "management-fee-paraphrase-004": {
+      "answer": "根据所选资料，管理费为0.50%。",
+      "cited_sources": [
+        "fund_research_demo.md"
+      ],
+      "abstained": false
+    },
+    "custody-fee-exact-005": {
+      "answer": "根据所选资料，托管费为0.10%。",
+      "cited_sources": [
+        "fund_research_demo.md"
+      ],
+      "abstained": false
+    },
+    "custody-fee-paraphrase-006": {
+      "answer": "根据资料，托管费为每年 0.10%。",
+      "cited_sources": [
+        "fund_research_demo.md"
+      ],
+      "abstained": false
+    },
+    "risk-exact-007": {
+      "answer": "股票市场波动可能导致本金亏损。",
+      "cited_sources": [
+        "fund_research_demo.md"
+      ],
+      "abstained": false
+    },
+    "risk-paraphrase-008": {
+      "answer": "会。根据资料中的风险提示：\"股票市场波动可能导致本金亏损。\"",
+      "cited_sources": [
+        "fund_research_demo.md"
+      ],
+      "abstained": false
+    },
+    "redemption-fee-unknown-009": {
+      "answer": "所选资料未提供赎回费的明确费率，无法据此回答。",
+      "cited_sources": [],
+      "abstained": true
+    },
+    "manager-unknown-010": {
+      "answer": "所选资料中未检索到与问题相关的内容，无法据此回答。",
+      "cited_sources": [],
+      "abstained": true
+    },
+    "return-unknown-011": {
+      "answer": "所选资料中未检索到与问题相关的内容，无法据此回答。",
+      "cited_sources": [],
+      "abstained": true
+    },
+    "minimum-purchase-unknown-012": {
+      "answer": "所选资料中未检索到与问题相关的内容，无法据此回答。",
+      "cited_sources": [],
+      "abstained": true
+    }
+  }
+}

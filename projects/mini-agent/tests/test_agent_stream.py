@@ -448,3 +448,47 @@ async def test_stream_agent_opens_one_mcp_session_per_request(
     ]
     assert session_enters == 1
     assert session_exits == 1
+
+@pytest.mark.asyncio
+async def test_stream_agent_skips_mcp_when_tools_disabled(
+    monkeypatch,
+) -> None:
+    class FakeLLMClient:
+        async def stream_chat(
+            self,
+            messages,
+            tools=None,
+        ):
+            assert tools == []
+            yield {
+                "content": "基于资料回答",
+            }
+
+    def unexpected_create_mcp_client():
+        raise AssertionError(
+            "禁用工具时不应创建 MCP Client"
+        )
+
+    monkeypatch.setattr(
+        "mini_agent.agent.LLMClient.from_env",
+        lambda: FakeLLMClient(),
+    )
+    monkeypatch.setattr(
+        "mini_agent.agent.create_mcp_client",
+        unexpected_create_mcp_client,
+    )
+
+    events = [
+        event
+        async for event in stream_agent(
+            "资料中的投资目标是什么？",
+            enable_tools=False,
+        )
+    ]
+
+    assert events == [
+        {
+            "type": "content",
+            "content": "基于资料回答",
+        }
+    ]

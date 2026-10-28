@@ -1,0 +1,77 @@
+{
+  "dataset": "public-fund-pdf-retrieval-dev",
+  "version": 2,
+  "split": "dev",
+  "document_count": 10,
+  "case_count": 68,
+  "limit": 3,
+  "evaluation_time_ms": 40037.8801,
+  "methods": {
+    "catalog_ngram": {
+      "total_cases": 68,
+      "answerable_cases": 50,
+      "unanswerable_cases": 18,
+      "source_hit_at_1": 1.0,
+      "source_hit_at_k": 1.0,
+      "source_mrr": 1.0,
+      "page_hit_at_k": 0.72,
+      "rejection_rate": 0.2777777777777778
+    },
+    "selected_document_ngram": {
+      "total_cases": 68,
+      "answerable_cases": 50,
+      "unanswerable_cases": 18,
+      "page_hit_at_1": 0.96,
+      "page_hit_at_k": 0.98,
+      "rejection_rate": 0.2777777777777778,
+      "evidence_gate_accuracy": 0.9852941176470589,
+      "answerable_pass_rate": 0.98,
+      "unanswerable_rejection_rate": 1.0,
+      "false_answer_rate": 0.0
+    },
+    "catalog_vector": {
+      "total_cases": 68,
+      "answerable_cases": 50,
+      "unanswerable_cases": 18,
+      "source_hit_at_1": 0.86,
+      "source_hit_at_k": 0.96,
+      "source_mrr": 0.9066666666666667,
+      "page_hit_at_k": 0.62,
+      "rejection_rate": 0.0
+    },
+    "catalog_hybrid": {
+      "total_cases": 68,
+      "answerable_cases": 50,
+      "unanswerable_cases": 18,
+      "source_hit_at_1": 0.98,
+      "source_hit_at_k": 0.98,
+      "source_mrr": 0.98,
+      "page_hit_at_k": 0.68,
+      "rejection_rate": 0.0
+    },
+    "selected_document_vector": {
+      "total_cases": 68,
+      "answerable_cases": 50,
+      "unanswerable_cases": 18,
+      "page_hit_at_1": 0.78,
+      "page_hit_at_k": 1.0,
+      "rejection_rate": 0.16666666666666666,
+      "evidence_gate_accuracy": 0.9558823529411765,
+      "answerable_pass_rate": 0.94,
+      "unanswerable_rejection_rate": 1.0,
+      "false_answer_rate": 0.0
+    },
+    "selected_document_hybrid": {
+      "total_cases": 68,
+      "answerable_cases": 50,
+      "unanswerable_cases": 18,
+      "page_hit_at_1": 0.94,
+      "page_hit_at_k": 1.0,
+      "rejection_rate": 0.16666666666666666,
+      "evidence_gate_accuracy": 0.9852941176470589,
+      "answerable_pass_rate": 0.98,
+      "unanswerable_rejection_rate": 1.0,
+      "false_answer_rate": 0.0
+    }
+  }
+}

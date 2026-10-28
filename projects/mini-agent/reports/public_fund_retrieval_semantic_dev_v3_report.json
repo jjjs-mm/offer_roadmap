@@ -1,0 +1,96 @@
+{
+  "dataset": "public-fund-pdf-retrieval-dev",
+  "version": 3,
+  "split": "dev",
+  "document_count": 11,
+  "case_count": 78,
+  "limit": 3,
+  "query_normalization": "conservative_fund_aliases_v1",
+  "evaluation_time_ms": 6337.4396,
+  "methods": {
+    "catalog_ngram": {
+      "total_cases": 78,
+      "answerable_cases": 59,
+      "unanswerable_cases": 19,
+      "source_hit_at_1": 0.9661016949152542,
+      "source_hit_at_k": 1.0,
+      "source_mrr": 0.980225988700565,
+      "page_hit_at_k": 0.6440677966101694,
+      "rejection_rate": 0.2631578947368421
+    },
+    "selected_document_ngram": {
+      "total_cases": 78,
+      "answerable_cases": 59,
+      "unanswerable_cases": 19,
+      "page_hit_at_1": 0.9491525423728814,
+      "page_hit_at_k": 0.9830508474576272,
+      "rejection_rate": 0.2631578947368421,
+      "evidence_gate_accuracy": 0.9871794871794872,
+      "answerable_pass_rate": 0.9830508474576272,
+      "unanswerable_rejection_rate": 1.0,
+      "false_answer_rate": 0.0,
+      "answerable_rejected_case_ids": [
+        "money-risk-level"
+      ],
+      "unanswerable_accepted_case_ids": [],
+      "page_miss_case_ids": [
+        "money-risk-level"
+      ]
+    },
+    "catalog_vector": {
+      "total_cases": 78,
+      "answerable_cases": 59,
+      "unanswerable_cases": 19,
+      "source_hit_at_1": 0.847457627118644,
+      "source_hit_at_k": 0.9491525423728814,
+      "source_mrr": 0.8926553672316385,
+      "page_hit_at_k": 0.6271186440677966,
+      "rejection_rate": 0.0
+    },
+    "catalog_hybrid": {
+      "total_cases": 78,
+      "answerable_cases": 59,
+      "unanswerable_cases": 19,
+      "source_hit_at_1": 0.9661016949152542,
+      "source_hit_at_k": 0.9830508474576272,
+      "source_mrr": 0.9745762711864406,
+      "page_hit_at_k": 0.6779661016949152,
+      "rejection_rate": 0.0
+    },
+    "selected_document_vector": {
+      "total_cases": 78,
+      "answerable_cases": 59,
+      "unanswerable_cases": 19,
+      "page_hit_at_1": 0.7457627118644068,
+      "page_hit_at_k": 1.0,
+      "rejection_rate": 0.15789473684210525,
+      "evidence_gate_accuracy": 0.9743589743589743,
+      "answerable_pass_rate": 0.9661016949152542,
+      "unanswerable_rejection_rate": 1.0,
+      "false_answer_rate": 0.0,
+      "answerable_rejected_case_ids": [
+        "quant-objective",
+        "quality-mixed-objective"
+      ],
+      "unanswerable_accepted_case_ids": [],
+      "page_miss_case_ids": []
+    },
+    "selected_document_hybrid": {
+      "total_cases": 78,
+      "answerable_cases": 59,
+      "unanswerable_cases": 19,
+      "page_hit_at_1": 0.9491525423728814,
+      "page_hit_at_k": 1.0,
+      "rejection_rate": 0.15789473684210525,
+      "evidence_gate_accuracy": 0.9871794871794872,
+      "answerable_pass_rate": 0.9830508474576272,
+      "unanswerable_rejection_rate": 1.0,
+      "false_answer_rate": 0.0,
+      "answerable_rejected_case_ids": [
+        "quant-objective"
+      ],
+      "unanswerable_accepted_case_ids": [],
+      "page_miss_case_ids": []
+    }
+  }
+}

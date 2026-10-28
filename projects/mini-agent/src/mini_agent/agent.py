@@ -87,7 +87,7 @@ def _history_assistant(message: dict) -> dict:
 async def _stream_agent_with_mcp(
     question: str,
     llm_client: LLMClient,
-    mcp_client: Client,
+    mcp_client: Client | None,
     llm_tools: list[dict[str, Any]],
     history: list[dict[str, Any]] | None = None,
     max_context_tokens: int = 4_000,
@@ -323,17 +323,20 @@ async def _stream_agent_with_mcp(
                     "arguments": arguments,
                 }
 
-                try:
-                    result = await call_mcp_tool(
-                    mcp_client,
-                    name,
-                    arguments,
-               )
-                except Exception as error:
-                    result = (
-                        "MCP 工具调用失败："
-                        f"{type(error).__name__}: {error}"
-                    )
+                if mcp_client is None:
+                    result = "当前模式未启用 MCP 工具"
+                else:
+                    try:
+                        result = await call_mcp_tool(
+                            mcp_client,
+                            name,
+                            arguments,
+                        )
+                    except Exception as error:
+                        result = (
+                            "MCP 工具调用失败："
+                            f"{type(error).__name__}: {error}"
+                        )
 
                 tool_result_cache[cache_key] = result
                 yield {
@@ -362,6 +365,7 @@ async def stream_agent(
     max_context_tokens: int = 4_000,
     max_request_attempts: int = 3,
     retry_delay_seconds: float = 0.5,
+    enable_tools: bool = True,
 ) -> AsyncIterator[dict[str, Any]]:
     try:
         llm_client = LLMClient.from_env()
@@ -370,6 +374,20 @@ async def stream_agent(
             "type": "error",
             "message": str(error),
         }
+        return
+
+    if not enable_tools:
+        async for event in _stream_agent_with_mcp(
+            question,
+            llm_client,
+            None,
+            [],
+            history,
+            max_context_tokens,
+            max_request_attempts,
+            retry_delay_seconds,
+        ):
+            yield event
         return
 
     try:

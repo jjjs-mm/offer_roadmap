@@ -71,6 +71,16 @@
       #chat-form {
         display: flex;
         gap: 8px;
+        flex-wrap: wrap;
+      }
+
+      #knowledge-document-id {
+        box-sizing: border-box;
+        width: 100%;
+        border: 1px solid #c9d2e3;
+        border-radius: 10px;
+        font: inherit;
+        padding: 10px 12px;
       }
 
       #question {
@@ -129,6 +139,12 @@
       </section>
 
       <form id="chat-form">
+        <input
+           id="knowledge-document-id"
+           type="text"
+           placeholder="知识文档 ID（可选）"
+           autocomplete="off"
+        >
         <textarea
           id="question"
           placeholder="输入问题，例如：3 * (7 + 2) 等于多少？"
@@ -141,7 +157,6 @@
           发送
         </button>
       </form>
-
       <p
         id="status"
         role="status"
@@ -150,6 +165,9 @@
         <script>
       const form = document.querySelector("#chat-form");
       const questionInput = document.querySelector("#question");
+      const knowledgeDocumentIdInput = document.querySelector(
+        "#knowledge-document-id",
+);
       const sendButton = document.querySelector("#send-button");
       const newConversationButton = document.querySelector(
              "#new-conversation-button",
@@ -235,6 +253,7 @@
           body: JSON.stringify({
             question,
             conversation_id: conversationId,
+            knowledge_document_id: knowledgeDocumentIdInput.value.trim() || null,
           }),
         });
 
@@ -246,6 +265,7 @@
         const decoder = new TextDecoder();
         let buffer = "";
         let assistantMessage = null;
+        let answerTextNode = null;
 
         while (true) {
           const { value, done } = await reader.read();
@@ -265,7 +285,11 @@
 
             const event = parseEvent(rawEvent);
 
-            if (event?.type === "content") {
+            if (event?.type === "trace") {
+              updateStatus(
+                `请求已接收（Trace：${event.data.trace_id}）`,
+              );
+            } else if (event?.type === "content") {
               if (!assistantMessage) {
                 assistantMessage = appendMessage(
                   "assistant",
@@ -273,10 +297,31 @@
                 );
               }
 
-              assistantMessage.textContent += event.data.content;
+              if (!answerTextNode) {
+                answerTextNode = document.createTextNode("");
+                assistantMessage.append(answerTextNode);
+              }
+              answerTextNode.textContent += event.data.content;
               assistantMessage.scrollIntoView({
                 block: "end",
               });
+            } else if (event?.type === "citation") {
+                if (!assistantMessage) {
+                   assistantMessage = appendMessage("assistant", "");
+                }
+
+                const citation = document.createElement("div");
+                const link = document.createElement("a");
+                link.href = `/knowledge/documents/${encodeURIComponent(event.data.document_id)}`;
+                const location = event.data.page_number
+                    ? `第 ${event.data.page_number} 页，第 ${event.data.chunk_index + 1} 块`
+                    : `第 ${event.data.chunk_index + 1} 块`;
+                link.textContent = `来源：${event.data.source_name}（${location}）`;
+                link.target = "_blank";
+                link.rel = "noopener noreferrer";
+
+                citation.append(link);
+                assistantMessage.append(citation);
             } else if (event?.type === "tool_start") {
               updateStatus(
                 `正在调用工具：${event.data.name}`,
@@ -287,6 +332,17 @@
               );
             } else if (event?.type === "retry") {
               updateStatus("网络波动，正在重试……");
+            } else if (event?.type === "evidence_check") {
+              const requiredFields = (
+                event.data.required_evidence_fields || []
+              ).join("、");
+              updateStatus(
+                event.data.sufficient
+                  ? "证据检查通过，正在生成回答……"
+                  : requiredFields
+                    ? `证据不足（需要：${requiredFields}），已停止模型生成。`
+                    : "证据不足，已停止模型生成。",
+              );
             } else if (event?.type === "error") {
               updateStatus(`错误：${event.data.message}`);
             } else if (event?.type === "done") {

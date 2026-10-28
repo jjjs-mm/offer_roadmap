@@ -1,0 +1,96 @@
+{
+  "dataset": "public-fund-pdf-retrieval-blind-v3-external-source",
+  "version": 3,
+  "split": "blind",
+  "document_count": 11,
+  "case_count": 10,
+  "limit": 3,
+  "query_normalization": "conservative_fund_aliases_v1",
+  "evaluation_time_ms": 3194.1447,
+  "methods": {
+    "catalog_ngram": {
+      "total_cases": 10,
+      "answerable_cases": 5,
+      "unanswerable_cases": 5,
+      "source_hit_at_1": 1.0,
+      "source_hit_at_k": 1.0,
+      "source_mrr": 1.0,
+      "page_hit_at_k": 0.8,
+      "rejection_rate": 0.0
+    },
+    "selected_document_ngram": {
+      "total_cases": 10,
+      "answerable_cases": 5,
+      "unanswerable_cases": 5,
+      "page_hit_at_1": 0.8,
+      "page_hit_at_k": 1.0,
+      "rejection_rate": 0.0,
+      "evidence_gate_accuracy": 0.8,
+      "answerable_pass_rate": 0.6,
+      "unanswerable_rejection_rate": 1.0,
+      "false_answer_rate": 0.0,
+      "answerable_rejected_case_ids": [
+        "blind-v3-crude-objective",
+        "blind-v3-crude-strategy"
+      ],
+      "unanswerable_accepted_case_ids": [],
+      "page_miss_case_ids": []
+    },
+    "catalog_vector": {
+      "total_cases": 10,
+      "answerable_cases": 5,
+      "unanswerable_cases": 5,
+      "source_hit_at_1": 1.0,
+      "source_hit_at_k": 1.0,
+      "source_mrr": 1.0,
+      "page_hit_at_k": 1.0,
+      "rejection_rate": 0.0
+    },
+    "catalog_hybrid": {
+      "total_cases": 10,
+      "answerable_cases": 5,
+      "unanswerable_cases": 5,
+      "source_hit_at_1": 1.0,
+      "source_hit_at_k": 1.0,
+      "source_mrr": 1.0,
+      "page_hit_at_k": 1.0,
+      "rejection_rate": 0.0
+    },
+    "selected_document_vector": {
+      "total_cases": 10,
+      "answerable_cases": 5,
+      "unanswerable_cases": 5,
+      "page_hit_at_1": 0.6,
+      "page_hit_at_k": 1.0,
+      "rejection_rate": 0.0,
+      "evidence_gate_accuracy": 0.8,
+      "answerable_pass_rate": 0.6,
+      "unanswerable_rejection_rate": 1.0,
+      "false_answer_rate": 0.0,
+      "answerable_rejected_case_ids": [
+        "blind-v3-crude-objective",
+        "blind-v3-crude-strategy"
+      ],
+      "unanswerable_accepted_case_ids": [],
+      "page_miss_case_ids": []
+    },
+    "selected_document_hybrid": {
+      "total_cases": 10,
+      "answerable_cases": 5,
+      "unanswerable_cases": 5,
+      "page_hit_at_1": 0.6,
+      "page_hit_at_k": 1.0,
+      "rejection_rate": 0.0,
+      "evidence_gate_accuracy": 0.8,
+      "answerable_pass_rate": 0.6,
+      "unanswerable_rejection_rate": 1.0,
+      "false_answer_rate": 0.0,
+      "answerable_rejected_case_ids": [
+        "blind-v3-crude-objective",
+        "blind-v3-crude-strategy"
+      ],
+      "unanswerable_accepted_case_ids": [],
+      "page_miss_case_ids": []
+    }
+  }
+}

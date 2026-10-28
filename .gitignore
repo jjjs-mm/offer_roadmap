@@ -10,3 +10,4 @@ __pycache__/
 *.sqlite3-shm
 *.sqlite3-wal
 tmp/
+projects/mini-agent/data/public_funds/raw/

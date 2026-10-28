@@ -1,0 +1,36 @@
+{
+  "name": "fund-retrieval-test",
+  "version": 1,
+  "split": "test",
+  "documents_file": "retrieval_eval_corpus.json",
+  "cases": [
+    {"case_id": "test-exact-001", "category": "exact", "query": "托管费年费率0.10%", "expected_sources": ["equity_fees.md"]},
+    {"case_id": "test-exact-002", "category": "exact", "query": "再投资风险", "expected_sources": ["bond_risks.md"]},
+    {"case_id": "test-exact-003", "category": "exact", "query": "红利再投资", "expected_sources": ["dividend.md"]},
+    {"case_id": "test-exact-004", "category": "exact", "query": "资产净值规模为125亿元", "expected_sources": ["scale.md"]},
+
+    {"case_id": "test-paraphrase-001", "category": "paraphrase", "query": "指数基金每年付多少托管费用？", "expected_sources": ["equity_fees.md"]},
+    {"case_id": "test-paraphrase-002", "category": "paraphrase", "query": "债券基金有没有销售服务费用？", "expected_sources": ["bond_fees.md"]},
+    {"case_id": "test-paraphrase-003", "category": "paraphrase", "query": "这只被动产品跟随哪个指数？", "expected_sources": ["equity_objective.md"]},
+    {"case_id": "test-paraphrase-004", "category": "paraphrase", "query": "中短债产品追求怎样的收益目标？", "expected_sources": ["bond_objective.md"]},
+    {"case_id": "test-paraphrase-005", "category": "paraphrase", "query": "指数跟不准属于哪种风险？", "expected_sources": ["equity_risks.md"]},
+    {"case_id": "test-paraphrase-006", "category": "paraphrase", "query": "债券发行人违约对应什么风险？", "expected_sources": ["bond_risks.md"]},
+    {"case_id": "test-paraphrase-007", "category": "paraphrase", "query": "买入申请一般何时确认成功？", "expected_sources": ["trading_rules.md"]},
+    {"case_id": "test-paraphrase-008", "category": "paraphrase", "query": "不主动选择时默认怎样分配收益？", "expected_sources": ["dividend.md"]},
+
+    {"case_id": "test-similar-001", "category": "similar_document", "query": "股票指数产品收不收销售服务费", "expected_sources": ["equity_fees.md"]},
+    {"case_id": "test-similar-002", "category": "similar_document", "query": "债券产品希望实现什么目标", "expected_sources": ["bond_objective.md"]},
+    {"case_id": "test-similar-003", "category": "similar_document", "query": "基金份额总额有多少", "expected_sources": ["scale.md"]},
+    {"case_id": "test-similar-004", "category": "similar_document", "query": "追加购买至少需要多少钱", "expected_sources": ["purchase_limit.md"]},
+
+    {"case_id": "test-short-001", "category": "short_query", "query": "张伟", "expected_sources": ["manager.md"]},
+    {"case_id": "test-short-002", "category": "short_query", "query": "98亿份", "expected_sources": ["scale.md"]},
+
+    {"case_id": "test-negative-001", "category": "hard_negative", "query": "基金成立日期是哪天？", "expected_sources": []},
+    {"case_id": "test-negative-002", "category": "hard_negative", "query": "最近一次更换基金经理是什么时候？", "expected_sources": []},
+    {"case_id": "test-negative-003", "category": "hard_negative", "query": "申购费打几折？", "expected_sources": []},
+    {"case_id": "test-negative-004", "category": "hard_negative", "query": "过去三年每年收益是多少？", "expected_sources": []},
+    {"case_id": "test-negative-005", "category": "hard_negative", "query": "基金持有哪些具体股票？", "expected_sources": []},
+    {"case_id": "test-negative-006", "category": "hard_negative", "query": "产品获得过哪些奖项？", "expected_sources": []}
+  ]
+}

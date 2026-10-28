@@ -1,0 +1,131 @@
+{
+  "dataset": "fund-retrieval-test",
+  "version": 1,
+  "split": "test",
+  "document_count": 12,
+  "case_count": 24,
+  "methods": {
+    "keyword": {
+      "total_cases": 24,
+      "answerable_cases": 18,
+      "unanswerable_cases": 6,
+      "hit_at_1": 0.3333333333333333,
+      "hit_at_k": 0.3333333333333333,
+      "mrr": 0.3333333333333333,
+      "rejection_rate": 1.0,
+      "limit": 3,
+      "by_category": {
+        "exact": {
+          "total_cases": 4,
+          "answerable_cases": 4,
+          "unanswerable_cases": 0,
+          "hit_at_1": 1.0,
+          "hit_at_k": 1.0,
+          "mrr": 1.0,
+          "rejection_rate": 0.0
+        },
+        "hard_negative": {
+          "total_cases": 6,
+          "answerable_cases": 0,
+          "unanswerable_cases": 6,
+          "hit_at_1": 0.0,
+          "hit_at_k": 0.0,
+          "mrr": 0.0,
+          "rejection_rate": 1.0
+        },
+        "paraphrase": {
+          "total_cases": 8,
+          "answerable_cases": 8,
+          "unanswerable_cases": 0,
+          "hit_at_1": 0.0,
+          "hit_at_k": 0.0,
+          "mrr": 0.0,
+          "rejection_rate": 0.0
+        },
+        "short_query": {
+          "total_cases": 2,
+          "answerable_cases": 2,
+          "unanswerable_cases": 0,
+          "hit_at_1": 1.0,
+          "hit_at_k": 1.0,
+          "mrr": 1.0,
+          "rejection_rate": 0.0
+        },
+        "similar_document": {
+          "total_cases": 4,
+          "answerable_cases": 4,
+          "unanswerable_cases": 0,
+          "hit_at_1": 0.0,
+          "hit_at_k": 0.0,
+          "mrr": 0.0,
+          "rejection_rate": 0.0
+        }
+      },
+      "latency_ms": {
+        "p50": 0.0636,
+        "p95": 0.0754
+      }
+    },
+    "ngram": {
+      "total_cases": 24,
+      "answerable_cases": 18,
+      "unanswerable_cases": 6,
+      "hit_at_1": 0.9444444444444444,
+      "hit_at_k": 0.9444444444444444,
+      "mrr": 0.9444444444444444,
+      "rejection_rate": 0.6666666666666666,
+      "limit": 3,
+      "by_category": {
+        "exact": {
+          "total_cases": 4,
+          "answerable_cases": 4,
+          "unanswerable_cases": 0,
+          "hit_at_1": 1.0,
+          "hit_at_k": 1.0,
+          "mrr": 1.0,
+          "rejection_rate": 0.0
+        },
+        "hard_negative": {
+          "total_cases": 6,
+          "answerable_cases": 0,
+          "unanswerable_cases": 6,
+          "hit_at_1": 0.0,
+          "hit_at_k": 0.0,
+          "mrr": 0.0,
+          "rejection_rate": 0.6666666666666666
+        },
+        "paraphrase": {
+          "total_cases": 8,
+          "answerable_cases": 8,
+          "unanswerable_cases": 0,
+          "hit_at_1": 1.0,
+          "hit_at_k": 1.0,
+          "mrr": 1.0,
+          "rejection_rate": 0.0
+        },
+        "short_query": {
+          "total_cases": 2,
+          "answerable_cases": 2,
+          "unanswerable_cases": 0,
+          "hit_at_1": 1.0,
+          "hit_at_k": 1.0,
+          "mrr": 1.0,
+          "rejection_rate": 0.0
+        },
+        "similar_document": {
+          "total_cases": 4,
+          "answerable_cases": 4,
+          "unanswerable_cases": 0,
+          "hit_at_1": 0.75,
+          "hit_at_k": 0.75,
+          "mrr": 0.75,
+          "rejection_rate": 0.0
+        }
+      },
+      "latency_ms": {
+        "p50": 0.1542,
+        "p95": 0.1757
+      }
+    }
+  }
+}
